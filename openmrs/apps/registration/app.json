@@ -33,18 +33,6 @@
             "showMiddleName": false,
             "showCasteSameAsLastNameCheckbox": true,
             "localNameSearch": false,
-            "printOptions": [
-                {
-                    "label": "<u>P</u>rint Registration Card",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "label": "P<u>r</u>int Supplemental Paper",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                }
-            ],
             "conceptSetUI": {
                 "REGISTRATION FEES": {
                     "required": true,

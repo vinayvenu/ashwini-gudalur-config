@@ -51,20 +51,9 @@
             "conceptName": "Nutritional Values",
             "conceptNames": ["Height", "Weight", "BMI", "BMI STATUS"],
             "required":true,
-            "showLatest": true
+            "showLatest": false
         },
         "order": 1,
-        "requiredPrivilege": "Edit Visits"
-    },
-    {
-        "id": "bahmni.registration.conceptSetGroup.feeInformation",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Fee Information",
-            "required":true
-        },
-        "order": 2,
         "requiredPrivilege": "Edit Visits"
     }
 ]
