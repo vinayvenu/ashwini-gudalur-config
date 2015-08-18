@@ -1,22 +1,21 @@
-[
-    {
+{
+    "general": {
         "dashboardName": "General",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
-
-        "sections": [
-            {
+        "sections": {
+            "diagnosis": {
                 "title": "Diagnosis",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true
             },
-             {
+            "disposition": {
                 "title": "Disposition",
                 "name": "disposition",
-                "numberOfVisits":1
+                "numberOfVisits": 1
             },
-            {
+            "treatments": {
                 "title": "Treatments",
                 "name": "treatment",
                 "dashboardParams": {
@@ -39,11 +38,11 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "radiology": {
                 "title": "Radiology",
                 "name": "radiology"
             },
-            {
+            "lab_orders": {
                 "title": "Lab Orders",
                 "name": "labOrders",
                 "dashboardParams": {
@@ -59,36 +58,50 @@
                     "numberOfVisits": 3
                 }
             },
-            {
+            "nutritional_values": {
                 "title": "Nutritional Values",
                 "name": "vitals",
                 "isObservation": true,
-                "dashboardParams":{
-                    "conceptNames": ["HEIGHT", "Weight", "BMI", "BMI STATUS"],
+                "dashboardParams": {
+                    "conceptNames": [
+                        "HEIGHT",
+                        "Weight",
+                        "BMI",
+                        "BMI STATUS"
+                    ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails":{
-                    "conceptNames": ["HEIGHT", "Weight", "BMI", "BMI STATUS"],
+                "allObservationDetails": {
+                    "conceptNames": [
+                        "HEIGHT",
+                        "Weight",
+                        "BMI",
+                        "BMI STATUS"
+                    ],
                     "numberOfVisits": 2,
                     "scope": "latest",
-                    "showDetailsButton":true
+                    "showDetailsButton": true
                 }
             },
-            {
+            "vitals": {
                 "title": "Vitals",
                 "name": "vitals",
                 "isObservation": true,
-                "dashboardParams":{
-                    "conceptNames": ["Vitals"],
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Vitals"
+                    ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails":{
-                    "conceptNames": ["Vitals"],
+                "allObservationDetails": {
+                    "conceptNames": [
+                        "Vitals"
+                    ],
                     "numberOfVisits": 2,
-                    "showDetailsButton":true
+                    "showDetailsButton": true
                 }
             },
-            {
+            "visits": {
                 "title": "Visits",
                 "name": "visits",
                 "dashboardParams": {
@@ -96,80 +109,114 @@
                     "maximumNoOfVisits": 10
                 }
             },
-            {
+            "diabetes": {
                 "title": "Diabetes",
                 "templateName": "Diabetes Template",
                 "name": "diseaseTemplate",
-                "dashboardParams":
-                {
+                "dashboardParams": {
                     "showOnly": []
-
                 },
-                "allDiseaseDetails":
-                {
-                    "showDetailsButton":true,
-                    "pivotTable": 
-                    {
+                "allDiseaseDetails": {
+                    "showDetailsButton": true,
+                    "pivotTable": {
                         "numberOfVisits": "15",
                         "groupBy": "encounters",
-                        "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
-                        "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
-                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
+                        "obsConcepts": [
+                            "Weight",
+                            "Height",
+                            "Systolic",
+                            "Diastolic",
+                            "Diabetes, Foot Exam",
+                            "Diabetes, Eye Exam"
+                        ],
+                        "drugConcepts": [
+                            "Ipratropium Pressurised",
+                            "Garbhpal Rasa"
+                        ],
+                        "labConcepts": [
+                            "RBS",
+                            "FBS",
+                            "PP2BS",
+                            "Hb1AC",
+                            "Creatinine",
+                            "Albumin",
+                            "Polymorph"
+                        ]
                     }
-
                 }
-                
             },
-            {
-                    "title": "Admission Details",
-                    "name": "admissionDetails"
+            "admission_details": {
+                "title": "Admission Details",
+                "name": "admissionDetails"
             }
-        ]
+        }
     },
-    {
+    "general_-_2": {
         "dashboardName": "General - 2",
         "maxRecentlyViewedPatients": 10,
-        "sections": [
-            {
+        "sections": {
+            "patient_information": {
                 "title": "Patient Information",
                 "name": "patientInformation",
-                "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+                "patientAttributes": [
+                    "caste",
+                    "class",
+                    "education",
+                    "occupation",
+                    "debt",
+                    "distanceFromCenter",
+                    "isUrban",
+                    "cluster",
+                    "RationCard",
+                    "familyIncome"
+                ],
+                "addressFields": [
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countryDistrict"
+                ]
             },
-            {
+            "temperature": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Temperature",
                 "config": {
-                    "yAxisConcepts": ["Temperature"],
+                    "yAxisConcepts": [
+                        "Temperature"
+                    ],
                     "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 3,
                     "minYAxisRange": 94,
                     "maxYAxisRange": 106
                 }
             },
-            {
+            "bmi_index": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "BMI Index",
                 "config": {
-                    "yAxisConcepts": ["HEIGHT"],
+                    "yAxisConcepts": [
+                        "HEIGHT"
+                    ],
                     "xAxisConcept": "WEIGHT",
                     "numberOfVisits": 3
                 }
             },
-            {
+            "height_vs_age": {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Height vs Age",
                 "config": {
-                    "yAxisConcepts": ["HEIGHT"],
+                    "yAxisConcepts": [
+                        "HEIGHT"
+                    ],
                     "xAxisConcept": "age",
                     "numberOfVisits": 3,
                     "minXAxisRange": 0,
                     "maxXAxisRange": 100
                 }
             }
-        ]
+        }
     }
-]
+}
