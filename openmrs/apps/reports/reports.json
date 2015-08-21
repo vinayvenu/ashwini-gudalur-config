@@ -1,5 +1,5 @@
-[
-    {
+{
+    "chief_complaint_report": {
         "name": "Chief Complaint Report",
         "type": "CodedObsCount",
         "config": {
@@ -9,7 +9,7 @@
             "visitTypes": "'IPD','OPD', 'Emergency'"
         }
     },
-    {
+    "inpatient_morbidity": {
         "name": "Inpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
@@ -17,7 +17,7 @@
             "visitTypes": "'IPD'"
         }
     },
-    {
+    "outpatient_morbidity": {
         "name": "Outpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
@@ -26,19 +26,19 @@
             "visitTypes": "'OPD'"
         }
     },
-    {
+    "laboratory_services": {
         "name": "Laboratory Services",
         "type": "TestCount"
     },
-    {
+    "generic_laboratory_services": {
         "name": "Generic Laboratory Services",
         "type": "ElisGeneric",
         "config": {
             "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"            
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
         }
     },
-    {
+    "generic_outpatient_morbidity": {
         "name": "Generic Outpatient Morbidity",
         "type": "MRSGeneric",
         "config": {
@@ -46,37 +46,45 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
         }
     },
-    {
+    "blood_pressure": {
         "name": "Blood Pressure",
         "type": "obsCount",
-        "config":{
+        "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "Inpatient Discharge Reports",
-            "conceptNames": "'Systolic','Diastolic'" ,
+            "conceptNames": "'Systolic','Diastolic'",
             "visitTypes": "'OPD','IPD','Emergency'"
         }
     },
-    {
+    "boolean_concept_report": {
         "name": "Boolean Concept Report",
         "type": "booleanConceptsCount",
-        "config":{
+        "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "Inpatient Discharge Reports",
-            "conceptNames": "'Delivery Note, Blood transfusion provided','Delivery Note, Meconium Stained Liquor','ANC, Blood Transfusion Provided','Delivery Note, Chlorhexidine applied on cord','Delivery Note, Liveborn defects present'"            
+            "conceptNames": "'Delivery Note, Blood transfusion provided','Delivery Note, Meconium Stained Liquor','ANC, Blood Transfusion Provided','Delivery Note, Chlorhexidine applied on cord','Delivery Note, Liveborn defects present'"
         }
     },
-    {
+    "leprosy_report": {
         "name": "Leprosy report",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
             "ageGroupName": "Client Service Reports",
-            "conceptPair": ["Leprosy, Case Type", "Leprosy, Leprosy Type"],
-            "rowsGroupBy": ["Leprosy, Case Type"],
-            "columnsGroupBy": ["Leprosy, Leprosy Type", "age_group"]
-    }
-  }  ,
-    {
+            "conceptPair": [
+                "Leprosy, Case Type",
+                "Leprosy, Leprosy Type"
+            ],
+            "rowsGroupBy": [
+                "Leprosy, Case Type"
+            ],
+            "columnsGroupBy": [
+                "Leprosy, Leprosy Type",
+                "age_group"
+            ]
+        }
+    },
+    "vitals_template_report": {
         "name": "Vitals Template Report",
         "type": "obsTemplate",
         "config": {
@@ -84,7 +92,7 @@
             "templateName": "Vitals"
         }
     },
-        {
+    "tuberculosis_intake_template_report": {
         "name": "Tuberculosis Intake Template Report",
         "type": "obsTemplate",
         "config": {
@@ -92,5 +100,4 @@
             "templateName": "Tuberculosis Intake Template"
         }
     }
-
-]
+}
