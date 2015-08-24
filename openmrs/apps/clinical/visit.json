@@ -24,7 +24,8 @@
                         "Gamma Benzene Hexachloride"
                     ],
                     "labConcepts": ""
-                }
+                },
+                "displayOrder": 0
             }
         }
     },
@@ -58,7 +59,8 @@
                         "cityVillage",
                         "countryDistrict"
                     ]
-                }
+                },
+                "displayOrder": 0
             },
             "investigationresult": {
                 "type": "investigationResult",
@@ -72,7 +74,8 @@
                     "numberOfVisits": 10,
                     "initialAccessionCount": 2,
                     "latestAccessionCount": 2
-                }
+                },
+                "displayOrder": 1
             },
             "pivot_table": {
                 "type": "pivotTable",
@@ -89,7 +92,8 @@
                         "Gamma Benzene Hexachloride"
                     ],
                     "labConcepts": ""
-                }
+                },
+                "displayOrder": 2
             },
             "temperature": {
                 "type": "observationGraph",
@@ -99,7 +103,8 @@
                         "Temperature"
                     ],
                     "numberOfVisits": 3
-                }
+                },
+                "displayOrder": 3
             },
             "blood_pressure": {
                 "type": "observationGraph",
@@ -110,7 +115,8 @@
                         "Diastolic"
                     ],
                     "numberOfVisits": 3
-                }
+                },
+                "displayOrder": 4
             }
         }
     }
