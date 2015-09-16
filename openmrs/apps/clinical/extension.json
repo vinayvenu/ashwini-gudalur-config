@@ -56,7 +56,7 @@
         "type": "config",
         "extensionParams": {
             "display": "All",
-            "forwardUrl": "#/patient/{{patientUuid}}/dashboard"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
         },
         "label": "All",
         "order": 3,
