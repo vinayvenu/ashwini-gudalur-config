@@ -1,6 +1,5 @@
 {
     "general": {
-        "title": "General",
         "displayByDefault": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
@@ -11,7 +10,7 @@
         "sections": {
             "pivot_table": {
                 "type": "pivotTable",
-                "title": "Pivot table",
+                "translationKey": "Pivot table",
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [
@@ -27,10 +26,10 @@
                 },
                 "displayOrder": 0
             }
-        }
+        },
+        "translationKey": "General"
     },
     "general_-_2": {
-        "title": "General - 2",
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Visit",
@@ -40,7 +39,6 @@
             "patientinformation": {
                 "type": "patientInformation",
                 "config": {
-                    "title": "PatientInformation",
                     "patientAttributes": [
                         "caste",
                         "class",
@@ -58,7 +56,8 @@
                         "address2",
                         "cityVillage",
                         "countryDistrict"
-                    ]
+                    ],
+                    "translationKey": "PatientInformation"
                 },
                 "displayOrder": 0
             },
@@ -73,13 +72,14 @@
                     "showAccessionNotes": true,
                     "numberOfVisits": 10,
                     "initialAccessionCount": 2,
-                    "latestAccessionCount": 2
+                    "latestAccessionCount": 2,
+                    "translationKey": "Lab Investigations"
                 },
                 "displayOrder": 1
             },
             "pivot_table": {
                 "type": "pivotTable",
-                "title": "Pivot table",
+                "translationKey": "Pivot table",
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [
@@ -97,7 +97,7 @@
             },
             "temperature": {
                 "type": "observationGraph",
-                "title": "Temperature",
+                "translationKey": "Temperature",
                 "config": {
                     "yAxisConcepts": [
                         "Temperature"
@@ -108,7 +108,7 @@
             },
             "blood_pressure": {
                 "type": "observationGraph",
-                "title": "Blood Pressure",
+                "translationKey": "Blood Pressure",
                 "config": {
                     "yAxisConcepts": [
                         "Systolic",
@@ -118,6 +118,7 @@
                 },
                 "displayOrder": 4
             }
-        }
+        },
+        "translationKey": "General - 2"
     }
 }

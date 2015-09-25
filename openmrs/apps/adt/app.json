@@ -29,11 +29,9 @@
         "onDischargeForwardTo": "#/patient/search",
         "defaultVisitType": "IPD",
         "dashboard": {
-            "dashboardName": "General",
             "conceptName": "Adt Notes",
             "sections": {
                 "vitals": {
-                    "title": "Vitals",
                     "name": "vitals",
                     "isObservation": true,
                     "dashboardParams": {
@@ -42,23 +40,23 @@
                         ],
                         "numberOfVisits": 2
                     },
-                    "displayOrder": 0
+                    "displayOrder": 0,
+                    "translationKey": "Vitals"
                 },
                 "disposition": {
-                    "title": "Disposition",
                     "name": "disposition",
                     "numberOfVisits": 1,
-                    "displayOrder": 1
+                    "displayOrder": 1,
+                    "translationKey": "Disposition"
                 },
                 "diagnosis": {
-                    "title": "Diagnosis",
                     "name": "diagnosis",
                     "numberOfVisits": 1,
                     "showDetailsButton": true,
-                    "displayOrder": 2
+                    "displayOrder": 2,
+                    "translationKey": "Diagnosis"
                 },
                 "patient_information": {
-                    "title": "Patient Information",
                     "name": "patientInformation",
                     "patientAttributes": [
                         "caste",
@@ -78,14 +76,16 @@
                         "cityVillage",
                         "countryDistrict"
                     ],
-                    "displayOrder": 3
+                    "displayOrder": 3,
+                    "translationKey": "Patient Information"
                 },
                 "admission_details": {
-                    "title": "Admission Details",
                     "name": "admissionDetails",
-                    "displayOrder": 4
+                    "displayOrder": 4,
+                    "translationKey": "Admission Details"
                 }
-            }
+            },
+            "translationKey": "General"
         }
     }
 }
