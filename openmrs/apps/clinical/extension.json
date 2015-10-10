@@ -3,42 +3,42 @@
         "id": "bahmni.clinical.consultation.observations",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
+        "label": "Observations",
         "url": "concept-set-group/observations",
         "default": true,
         "icon": "fa-user-md",
         "order": 1,
-        "requiredPrivilege": "app:clinical:observationTab",
-        "translationKey": "Observations"
+        "requiredPrivilege": "app:clinical:observationTab"
     },
     "bahmni_clinical_consultation_diagnosis": {
         "id": "bahmni.clinical.consultation.diagnosis",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
+        "label": "Diagnosis",
         "url": "diagnosis",
         "icon": "fa-user-md",
         "order": 2,
-        "requiredPrivilege": "app:clinical:diagnosisTab",
-        "translationKey": "Diagnosis"
+        "requiredPrivilege": "app:clinical:diagnosisTab"
     },
     "bahmni_clinical_consultation_disposition": {
         "id": "bahmni.clinical.consultation.disposition",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
+        "label": "Disposition",
         "url": "disposition",
         "icon": "fa-user-md",
         "order": 3,
-        "requiredPrivilege": "app:clinical:dispositionTab",
-        "translationKey": "Disposition"
+        "requiredPrivilege": "app:clinical:dispositionTab"
     },
     "bahmni_clinical_consultation_summary": {
         "id": "bahmni.clinical.consultation.summary",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
+        "label": "Consultation",
         "url": "consultation",
         "icon": "fa-user-md",
         "order": 5,
-        "requiredPrivilege": "app:clinical:consultationTab",
-        "translationKey": "Consultation"
+        "requiredPrivilege": "app:clinical:consultationTab"
     },
     "bahmni_clinical_orders_pending": {
         "id": "bahmni.clinical.orders.pending",
@@ -55,8 +55,8 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "translationKey": "All"
+            "display": "All",
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
         },
         "label": "All",
         "order": 3,
@@ -138,10 +138,10 @@
         "id": "bahmni.clinical.billing.treatment",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
+        "label": "Treatment",
         "url": "treatment",
         "icon": "fa-user-md",
         "order": 7,
-        "requiredPrivilege": "app:clinical:consultationTab",
-        "translationKey": "Treatment"
+        "requiredPrivilege": "app:clinical:consultationTab"
     }
 }
