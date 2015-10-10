@@ -1,22 +1,24 @@
 {
     "general": {
+        "dashboardName": "General",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "diagnosis": {
+                "title": "Diagnosis",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
-                "displayOrder": 0,
-                "translationKey": "Diagnosis"
+                "displayOrder": 0
             },
             "disposition": {
+                "title": "Disposition",
                 "name": "disposition",
                 "numberOfVisits": 1,
-                "displayOrder": 1,
-                "translationKey": "Disposition"
+                "displayOrder": 1
             },
             "treatments": {
+                "title": "Treatments",
                 "name": "treatment",
                 "dashboardParams": {
                     "showFlowSheet": true,
@@ -37,15 +39,15 @@
                     "showOtherActive": true,
                     "showDetailsButton": true
                 },
-                "displayOrder": 2,
-                "translationKey": "Treatments"
+                "displayOrder": 2
             },
             "radiology": {
+                "title": "Radiology",
                 "name": "radiology",
-                "displayOrder": 3,
-                "translationKey": "Radiology"
+                "displayOrder": 3
             },
             "lab_orders": {
+                "title": "Lab Orders",
                 "name": "labOrders",
                 "dashboardParams": {
                     "title": null,
@@ -59,10 +61,10 @@
                 "allLabDetails": {
                     "numberOfVisits": 3
                 },
-                "displayOrder": 4,
-                "translationKey": "Lab Orders"
+                "displayOrder": 4
             },
             "nutritional_values": {
+                "title": "Nutritional Values",
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
@@ -85,10 +87,10 @@
                     "scope": "latest",
                     "showDetailsButton": true
                 },
-                "displayOrder": 5,
-                "translationKey": "Nutritional Values"
+                "displayOrder": 5
             },
             "vitals": {
+                "title": "Vitals",
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
@@ -104,19 +106,19 @@
                     "numberOfVisits": 2,
                     "showDetailsButton": true
                 },
-                "displayOrder": 6,
-                "translationKey": "Vitals"
+                "displayOrder": 6
             },
             "visits": {
+                "title": "Visits",
                 "name": "visits",
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 10
                 },
-                "displayOrder": 7,
-                "translationKey": "Visits"
+                "displayOrder": 7
             },
             "diabetes": {
+                "title": "Diabetes",
                 "templateName": "Diabetes Template",
                 "name": "diseaseTemplate",
                 "dashboardParams": {
@@ -150,21 +152,21 @@
                         ]
                     }
                 },
-                "displayOrder": 8,
-                "translationKey": "Diabetes"
+                "displayOrder": 8
             },
             "admission_details": {
+                "title": "Admission Details",
                 "name": "admissionDetails",
-                "displayOrder": 9,
-                "translationKey": "Admission Details"
+                "displayOrder": 9
             }
-        },
-        "translationKey": "General"
+        }
     },
     "general_-_2": {
+        "dashboardName": "General - 2",
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patient_information": {
+                "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [
                     "caste",
@@ -184,47 +186,41 @@
                     "cityVillage",
                     "countryDistrict"
                 ],
-                "displayOrder": 0,
-                "translationKey": "Patient Information",
-                "config":{
-                    "translationKey": "Patient Information"
-                }
+                "displayOrder": 0
             },
             "temperature": {
                 "type": "observationGraph",
                 "name": "observationGraph",
+                "title": "Temperature",
                 "config": {
                     "yAxisConcepts": [
                         "Temperature"
                     ],
                     "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 3,
-                    "translationKey": "Temperature",
                     "minYAxisRange": 94,
                     "maxYAxisRange": 106
                 },
-                "displayOrder": 1,
-                "translationKey": "Temperature"
+                "displayOrder": 1
             },
             "bmi_index": {
                 "type": "observationGraph",
                 "name": "observationGraph",
+                "title": "BMI Index",
                 "config": {
-                    "translationKey": "BMI Index",
                     "yAxisConcepts": [
                         "HEIGHT"
                     ],
                     "xAxisConcept": "WEIGHT",
                     "numberOfVisits": 3
                 },
-                "displayOrder": 2,
-                "translationKey": "BMI Index"
+                "displayOrder": 2
             },
             "height_vs_age": {
                 "type": "observationGraph",
                 "name": "observationGraph",
+                "title": "Height vs Age",
                 "config": {
-                    "translationKey": "Height vs Age",
                     "yAxisConcepts": [
                         "HEIGHT"
                     ],
@@ -233,10 +229,8 @@
                     "minXAxisRange": 0,
                     "maxXAxisRange": 100
                 },
-                "displayOrder": 3,
-                "translationKey": "Height vs Age"
+                "displayOrder": 3
             }
-        },
-        "translationKey": "General - 2"
+        }
     }
 }
