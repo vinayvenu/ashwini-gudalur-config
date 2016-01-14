@@ -16,8 +16,13 @@
             "patientUuid",
             "activeVisitUuid"
         ],
+	
         "config" : {
-            "patientInformation": {
+		"mandatoryPersonAttributes" : [
+	    	   "Tribe",
+		   "Is Tribal"
+            ],
+	    "patientInformation": {
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
