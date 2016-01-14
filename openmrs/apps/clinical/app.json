@@ -1,184 +1,194 @@
 {
-    "id": "bahmni.clinical",
-    "extensionPoints": [
-        {
-            "id": "org.bahmni.clinical.consultation.board",
-            "description": "Bahmni Clinical Consultation Page"
-        },
-        {
-            "id": "org.bahmni.clinical.conceptSetGroup.*",
-            "description": "Define conceptsets part of a conceptset group"
-        },
-        {
-            "id": "org.bahmni.clinical.orders",
-            "description": "Bahmni Orders Page"
-        },
-        {
-            "id": "org.bahmni.patient.search",
-            "description": "Bahmni Patient search, lookups Page"
-        }
-    ],
-    "contextModel": [
-        "patientUuid",
-        "visitUuid"
-    ],
-    "config": {
-        "obsIgnoreList": [
-            "REGISTRATION FEES",
-            "COMMENTS",
-            "Patient file"
+        "id": "bahmni.clinical",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.clinical.consultation.board",
+                "description": "Bahmni Clinical Consultation Page"
+            },
+            {
+                "id": "org.bahmni.clinical.conceptSetGroup.*",
+                "description": "Define conceptsets part of a conceptset group"
+            },
+            {
+                "id": "org.bahmni.clinical.orders",
+                "description": "Bahmni Orders Page"
+            },
+            {
+                "id":"org.bahmni.patient.search",
+                "description": "Bahmni Patient search, lookups Page"
+            }
         ],
-        "otherInvestigationsMap": {
-            "Radiology": "Radiology Order",
-            "Endoscopy": "Endoscopy Order"
-        },
-        "maxConceptSetLevels": 3,
-        "conceptSetUI": {
-            "Chief Complaint Data": {
-                "multiple": 3
-            },
-            "Chief Complaint": {
-                "freeTextAutocomplete": true,
-                "durationRequired": false
-            },
-            "Posture": {
-                "buttonSelect": true
-            },
-            "Non-Coded Chief Complaint": {
-                "freeTextAutocomplete": true,
-                "durationRequired": false
-            },
-            "P/A Presenting Part": {
-                "multiSelect": true
-            },
-            "FHS": {
-                "buttonSelect": true
-            },
-            "P/S (Per Speculum) - Cervix": {
-                "grid": true
-            },
-            "Anaemia, Stopped Since When": {
-                "conciseText": true
-            },
-            "Examination Notes": {
-                "conciseText": true
-            },
-            "Tuberculosis Intake Template": {
-                "computeDrugs": true
-            },
-            "Set1": {
-                "allowAddMore": true
-            },
-            "Set2": {
-                "allowAddMore": true
-            },
-            "Coded3": {
-                "multiSelect": true
-            }
-        },
-        "visitPage": {
-            "observationDisplay": {
-                "conceptNames": []
-            }
-        },
-        "drugOrder": {
-            "defaultDurationUnit": "Day(s)",
-            "defaultInstructions": "As directed",
-            "frequencyDefaultDurationUnitsMap": [
-                {
-                    "minFrequency": 5,
-                    "maxFrequency": null,
-                    "defaultDurationUnit": "Hour(s)"
-                },
-                {
-                    "minFrequency": "1/7",
-                    "maxFrequency": 5,
-                    "defaultDurationUnit": "Day(s)"
-                },
-                {
-                    "minFrequency": "1/30",
-                    "maxFrequency": "1/7",
-                    "defaultDurationUnit": "Week(s)"
-                },
-                {
-                    "minFrequency": null,
-                    "maxFrequency": "1/30",
-                    "defaultDurationUnit": "Month(s)"
+        "contextModel": [
+            "patientUuid",
+            "visitUuid"
+        ],
+        "config" : {
+            "diagnosisStatus": "Inactive",
+            "program": {
+                "patientInformation": {
+                    "ageLimit":100
                 }
-            ],
-            "drugFormDefaults": {
-                "Ayurvedic": {
-                    "doseUnits": "Teaspoon",
-                    "route": "Oral"
+            },
+            "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
+            "otherInvestigationsMap": {
+                "Radiology": "Radiology Order",
+                "Endoscopy": "Endoscopy Order"
+            },
+            "allowConsultationWhenNoOpenVisit": false,
+            "defaultVisitType": "OPD",
+            "visitTypeForRetrospectiveEntries": "Special OPD",
+            "maxConceptSetLevels": 3,
+            "allowOnlyCodedDiagnosis": false,
+            "conceptSetUI": {
+                "Chief Complaint Data": {
+                    "allowAddMore" : true
                 },
-                "Capsule": {
-                    "doseUnits": "Capsule(s)",
-                    "route": "Oral"
+                "Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false,
+                    "allowAddMore" : true
                 },
-                "Cream": {
-                    "route": "Topical"
+                "Posture" : {
+                    "buttonSelect" : true
                 },
-                "Drops": {
-                    "doseUnits": "Drop",
-                    "route": "Topical"
+                "Non-Coded Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
                 },
-                "Food Supplement": {
-                    "doseUnits": "Unit(s)",
-                    "route": "Oral"
+                "P/A Presenting Part" : {
+                    "buttonSelect" : true
                 },
-                "Gel": {
-                    "route": "Topical"
+                "FHS" : {
+                    "buttonSelect" : true
                 },
-                "Granule": {
-                    "doseUnits": "Unit(s)",
-                    "route": "Oral"
+                "P/S (Per Speculum) - Cervix" : {
+                    "grid" : true
                 },
-                "Inhaler": {
-                    "doseUnits": "Puff(s)",
-                    "route": "Inhalation"
+                "Anaemia, Stopped Since When" : {
+                    "conciseText" : true
                 },
-                "Injection": {
-                    "doseUnits": "mg",
-                    "route": "Intravenous"
+                "Examination Notes" :{
+                    "conciseText" : true
                 },
-                "Jelly": {
-                    "route": "Topical"
+                "P/A Presenting Part" : {
+                    "multiSelect" : true
                 },
-                "Liquid": {
-                    "doseUnits": "ml",
-                    "route": "Oral"
+                "Tuberculosis Intake Template" : {
+                    "computeDrugs" : true
                 },
-                "Lotion": {
-                    "route": "Topical"
+                "Set1" :{
+                    "allowAddMore" :true
                 },
-                "Ointment": {
-                    "route": "Topical"
+                "Set2" :{
+                    "allowAddMore" :true
                 },
-                "Pessary": {
-                    "doseUnits": "Unit(s)",
-                    "route": "Per Vaginal"
+                "Coded3" :{
+                    "multiSelect" :true
                 },
-                "Powder": {
-                    "doseUnits": "mg",
-                    "route": "Topical"
+                "Image" :{
+                    "allowAddMore" :true
                 },
-                "Solution": {
-                    "doseUnits": "ml",
-                    "route": "Topical"
+                "Gynaecology, Gravida" :{
+                    "stepper" :true
                 },
-                "Spray": {
-                    "doseUnits": "Puff(s)",
-                    "route": "Nasal"
+                "Accepted Family Planning methods":{
+                    "multiSelect": true
                 },
-                "Syrup": {
-                    "doseUnits": "ml",
-                    "route": "Oral"
-                },
-                "Tablet": {
-                    "doseUnits": "Tablet(s)",
-                    "route": "Oral"
+                "defaults" : {
+                    "Number of living children" : 1,
+                    "Accepted Family Planning methods": ["Condoms", "Pills"],
+                    "Pain management given": true,
+                    "Safe Abortion, Remarks": "Remarks",
+                    "Malaria, Death Date": "2015-12-01"
+                }
+            },
+            "visitPage": {
+                "observationDisplay" : {
+                    "conceptNames": []
+                }
+            },
+            "drugOrder": {
+                "defaultDurationUnit": "Day(s)",
+                "defaultInstructions": "As directed",
+                "frequencyDefaultDurationUnitsMap": [
+                    {"minFrequency":5, "maxFrequency": null, "defaultDurationUnit": "Hour(s)"},
+                    {"minFrequency":"1/7", "maxFrequency": 5, "defaultDurationUnit": "Day(s)"},
+                    {"minFrequency":"1/30", "maxFrequency": "1/7", "defaultDurationUnit": "Week(s)"},
+                    {"minFrequency":null, "maxFrequency": "1/30", "defaultDurationUnit": "Month(s)"}
+                ],
+                "drugFormDefaults": {
+                    "Ayurvedic": {
+                        "doseUnits": "Teaspoon",
+                        "route": "Oral"
+                    },
+                    "Capsule": {
+                        "doseUnits": "Capsule(s)",
+                        "route": "Oral"
+                    },
+                    "Cream": {
+                        "route": "Topical"
+                    },
+                    "Drops": {
+                        "doseUnits": "Drop",
+                        "route": "Topical"
+                    },
+                    "Food Supplement": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Oral"
+                    },
+                    "Gel": {
+                        "route": "Topical"
+                    },
+                    "Granule": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Oral"
+                    },
+                    "Inhaler": {
+                        "doseUnits": "Puff(s)",
+                        "route": "Inhalation"
+                    },
+                    "Injection": {
+                        "doseUnits": "mg",
+                        "route": "Intravenous"
+                    },
+                    "Jelly": {
+                        "route": "Topical"
+                    },
+                    "Liquid": {
+                        "doseUnits": "ml",
+                        "route": "Oral"
+                    },
+                    "Lotion": {
+                        "route": "Topical"
+                    },
+                    "Ointment": {
+                        "route": "Topical"
+                    },
+                    "Pessary": {
+                        "doseUnits": "Unit(s)",
+                        "route": "Per Vaginal"
+                    },
+                    "Powder": {
+                        "doseUnits": "mg",
+                        "route": "Topical"
+                    },
+                    "Solution": {
+                        "doseUnits": "ml",
+                        "route": "Topical"
+                    },
+                    "Spray": {
+                        "doseUnits": "Puff(s)",
+                        "route": "Nasal"
+                    },
+                    "Syrup": {
+                        "doseUnits": "ml",
+                        "route": "Oral"
+                    },
+                    "Tablet": {
+                        "doseUnits": "Tablet(s)",
+                        "route": "Oral"
+                    }
                 }
             }
         }
-    }
 }
