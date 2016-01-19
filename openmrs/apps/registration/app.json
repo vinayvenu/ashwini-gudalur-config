@@ -20,7 +20,10 @@
         "config" : {
 		"mandatoryPersonAttributes" : [
 	    	   "Tribe",
-		   "Is Tribal"
+		   "Is Tribal",
+		   "Is Sangam", 
+		   "Is Premium Paid"                 
+
             ],
 	    "patientInformation": {
                 "additionalPatientInformation": {
@@ -55,7 +58,7 @@
             },
 
             "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+            "defaultIdentifierPrefix": "TR",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
