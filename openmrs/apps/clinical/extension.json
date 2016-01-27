@@ -206,6 +206,9 @@
     "label": "Medications",
     "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
     "url": "treatment",
+    "extensionParams":{
+      "tabConfigName": "allMedicationTabConfig"
+    },
     "icon": "fa-user-md",
     "order": 7,
     "requiredPrivilege": "app:clinical:consultationTab"
