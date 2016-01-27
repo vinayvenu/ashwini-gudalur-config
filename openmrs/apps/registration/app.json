@@ -81,15 +81,9 @@
                 }
             ],
             "conceptSetUI": {
-                "REGISTRATION FEES": {
+                "Departments": {
                     "required": true,
-                    "label": "Fee"
-                },
-                "FHS": {
-                    "buttonSelect": true
-                },
-                "defaults":{
-                    "FHS": "Present"
+                    "autocomplete": true
                 }
             },
             "fieldValidation" : {

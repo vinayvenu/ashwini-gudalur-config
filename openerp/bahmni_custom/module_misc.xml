@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="custom_report" parent="base.menu_reporting" name="Custom Reports Report" sequence="1"/>
+        <!--For Accounts Supplier Reference-->
+        <!--New Field Supplier Reference in Partners-->
+        <record id="view_supplier_partner_tree_type" model="ir.ui.view">
+            <field name="name">res.partner.tree.inherited</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website']" position="before">
+                    <field name="tin_number"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_supplier_reference_tree_type" model="ir.ui.view">
+            <field name="name">res.partner.reference.tree.inherited</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="before">
+                    <field name="tin_number"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.filters" id="products_expired">
+            <field name="name">Expired Products</field>
+            <field name="model_id">prodlots.report</field>
+            <field name="user_id"></field>
+            <field name="domain">
+                [
+                ['life_date', '&lt;', context_today().strftime('%Y-%m-%d')],['qty', '&gt;', 0]
+                ]
+            </field>
+        </record>
+        <record model="ir.filters" id="products_expiring_in_3months">
+            <field name="name">Expiring in 3 months</field>
+            <field name="model_id">prodlots.report</field>
+            <field name="user_id"></field>
+            <field name="domain">
+                [
+                ['life_date', '&gt;=', context_today().strftime('%Y-%m-%d')],[ 'life_date', '&lt;',(context_today() + datetime.timedelta(90)).strftime('%Y-%m-%d')],['qty', '&gt;', 0]
+                ]
+            </field>
+        </record>
+        <record model="ir.filters" id="products_expired_and_expiring_in_3months">
+            <field name="name">Already Expired and Expiring in 3 months</field>
+            <field name="model_id">prodlots.report</field>
+            <field name="user_id"></field>
+            <field name="domain">
+                [
+                [ 'life_date', '&lt;',(context_today() + datetime.timedelta(90)).strftime('%Y-%m-%d')],['qty', '&gt;', 0]
+                ]
+            </field>
+        </record>
+    </data>
+</openerp>
