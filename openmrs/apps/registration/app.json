@@ -59,7 +59,7 @@
 
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "TR",
-            "defaultVisitType": "OPD",
+            "defaultVisitType": "General",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showCasteSameAsLastNameCheckbox": false,
