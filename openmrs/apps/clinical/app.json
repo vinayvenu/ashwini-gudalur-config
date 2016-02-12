@@ -35,8 +35,8 @@
                 "Endoscopy": "Endoscopy Order"
             },
             "allowConsultationWhenNoOpenVisit": false,
-            "defaultVisitType": "OPD",
-            "visitTypeForRetrospectiveEntries": "Special OPD",
+            "defaultVisitType": "General",
+            "visitTypeForRetrospectiveEntries": "General",
             "maxConceptSetLevels": 3,
             "allowOnlyCodedDiagnosis": false,
             "conceptSetUI": {
