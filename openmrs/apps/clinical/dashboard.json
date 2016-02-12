@@ -120,6 +120,32 @@
                     "numberOfVisits": 4
                 }
             },
+            "DentalOrders": {
+                "orderType": "Dental Order",
+                "title":"Dental Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_DENTAL_ORDERS_KEY",
+                "displayOrder": 21,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Summary"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "USGOrders": {
+                "orderType": "USG Order",
+                "title":"USG Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_USG_ORDERS_KEY",
+                "displayOrder": 22,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Summary"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
             "pacs": {
                 "title":"Pacs",
                 "orderType": "Radiology Order",
