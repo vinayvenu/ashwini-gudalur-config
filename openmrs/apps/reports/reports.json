@@ -202,17 +202,18 @@
       "name": "Patient Information",
       "type": "PatientReport"
     },
-    "obsCannedReport":  {
-        "name": "Obs Canned Report",
-        "type": "obsCannedReport",
-        "config": {
-            "patientAttributes": ["caste", "education"],
-            "applyDateRangeFor":  "ObsRecording",
-            "addressAttributes": ["postal_code", "city_village"],
-            "conceptNames": ["Pulse", "WEIGHT","Vitals, Systolic","Temperature"],
-            "visitIndependentConcept": ["HEIGHT","Temperature"],
-            "enrolledProgram" :"HIV Program" ,
-            "showObsOnlyForProgramDuration": false
-        }
-    }
-}
+    "diagnosisCountReport":{
+    	"name": "Diagnosis Report",
+ 		"type": "diagnosisCount",
+ 		"config": {
+  				 "dateRangeRequired": true, 
+				 "applyDateRangeFor": "diagnosisDate",
+ 				 "visitsToConsider": "open", 
+				 "ageGroupName": "All Ages",
+ 				"concept": "Diagnosis Set of Sets",
+ 				"rowsGroupBy": ["header_concept_name","leaf_concept_name"], 
+  				"columnsGroupBy": ["gender","agegroup_name"]
+				}
+				}
+  }
+				

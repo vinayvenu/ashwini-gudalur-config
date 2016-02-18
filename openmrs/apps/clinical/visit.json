@@ -5,7 +5,7 @@
         "printing": {
             "title": "Bahmni",
             "header": "Visit",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../images/gudlur.png"
         },
         "defaultSections": true,
         "sections": {
@@ -45,7 +45,7 @@
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../images/gudlur.png"
         },
         "sections": {
             "PatientInformation":{
@@ -151,9 +151,53 @@
                     ],
                     "scope": "latest"
                 }
-            }
+            },
+        "dischargeNotes":{
+        "type": "observation",
+        "title": "Discharge Summary",
+        "displayOrder": 9,
+         "translationKey": "Discharge Summary",
+        "config": {
+          "conceptNames": ["Discharge Summary"],
+         "numberOfVisits": "1"
         }
+      	}
+        }
+ 
     },
+    "prescription":{
+    "translationKey": "DASHBOARD_TAB_PRESCRIPTION_SUMMARY_KEY",
+        "printing": {
+            "title": "Bahmni",
+            "header": "Prescription Summary",
+            "logo": "../images/gudlur.png"
+        },
+        "sections": {
+        "PatientInformation":{
+                "type": "patientInformation",
+                "displayOrder": 0,
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                    "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+                }
+            },
+          "treatments":{
+                "type": "treatment",
+                "displayOrder": 1,
+                "config": {
+                    "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_KEY",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
+            }
+    }
+    },
+    
     "orders":{
       "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
       "sections": {
