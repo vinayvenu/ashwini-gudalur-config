@@ -214,6 +214,28 @@
  				"rowsGroupBy": ["header_concept_name","leaf_concept_name"], 
   				"columnsGroupBy": ["gender","agegroup_name"]
 				}
-				}
+	},
+	 "labtestreferredoutReport":{
+        "name": "Lab test Referred-Out Report",
+        "type": "ElisGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/refferalcount.sql"
+        }
+    },
+     "labtestaggregatecount":{
+        "name": "Lab test aggregate count (Tribal and Non-Tribal)",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/labtesttrintri.sql"
+        }
+    },
+      "labtestvisitaggregatecount":{
+        "name": "Lab test aggregate count(IPD,OPD, ER)",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/labtestvisit.sql"
+        }
+    }
+				
   }
 				
