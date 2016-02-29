@@ -19,7 +19,6 @@ class sale_order(osv.osv):
             partner_attri_cnt=self.pool.get("res.partner.attributes").search(cr,uid,[('partner_id','=',partner.id)])
             if len(partner_attri_cnt) > 0:
                 partner_attribute=self.pool.get("res.partner.attributes").browse(cr,uid,partner_attri_cnt[0])
-                _logger.error("_______________%s",partner_attribute.x_Tribe)
                 res[sale_order.id] = partner_attribute.x_Tribe
             else:
                 res[sale_order.id]=" "
@@ -76,7 +75,7 @@ class sale_order(osv.osv):
                 res['value']['partner_is_tribe']= ''
                 res['value']['partner_is_sangam']= ''
                 res['value']['partner_is_Premium']= ''
-        return res;
+        return res
 
     _columns = {
         'partner_caste': fields.function(_get_partner_attribute_details, type='char', string ='Tribe'),
