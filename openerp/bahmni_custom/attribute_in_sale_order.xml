@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="partner_attribute_form_new"  model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="partner_is_tribe"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_is_tribe']" position="after">
+                    <field name="partner_caste"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_caste']" position="after">
+                    <field name="partner_is_sangam"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_is_sangam']" position="after">
+                    <field name="partner_is_Premium"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
