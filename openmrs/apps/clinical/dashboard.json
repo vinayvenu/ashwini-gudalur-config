@@ -146,6 +146,20 @@
                     "numberOfVisits": 4
                 }
             },
+            
+               "ProcedureOrders": {
+                "orderType": "Procedure Order",
+                "title":"Procedure Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
+                "displayOrder": 22,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Procedure order fulfillment Notes"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
             "pacs": {
                 "title":"Pacs",
                 "orderType": "Radiology Order",

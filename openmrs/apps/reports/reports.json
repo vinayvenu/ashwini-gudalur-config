@@ -229,26 +229,33 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/labtesttrintri.sql"
         }
     },
-    "patient_attribute_count": {
-        "name": "OP Analysis - Tribal/Non Tribal visit count",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/patient_attribute_count.sql"
-        }
-    },
-    "ares_wise_count": {
-        "name": "OP Analysis - Area wise OP visit count",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/area_wise_op_visit_count.sql"
-        }
-    },
       "labtestvisitaggregatecount":{
         "name": "Lab test aggregate count(IPD,OPD, ER)",
         "type": "MRSGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/labtestvisit.sql"
         }
+    },
+    "deliveryReport":{
+    "name": "Delivery Report",
+    "type": "obsCount",
+    "config": {
+    "ageGroupName": "All Ages",
+    "conceptNames": ["Delivery note"],
+     "locationTagNames": ["Report Location"],
+      "countOnlyClosedVisits":"false"
     }
-}
+ },
+    "multipleOrderReport":{
+        "name": "Order Report",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/radiologyorder.sql"
+        }
+    }
+    
+    
+ 
+				
+  }
 				

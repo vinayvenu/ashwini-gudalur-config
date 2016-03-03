@@ -48,7 +48,26 @@
 	 "label": "USG Order",
 	 "order": 3,
 	 "requiredPrivilege": "app:orders"
+	 },
+	 
+	  "bahmniClinicalPatientsSearchProcedureOrdersAllPatients":{
+	 "id": "bahmni.clinical.patients.search.RadiologyOrderAllPatients",
+	 "extensionPointId": "org.bahmni.patient.search",
+	 "type": "config",
+	 "extensionParams": {
+	  "searchHandler": "emrapi.sqlSearch.Procedure",
+	  "display":"Procedure Order",
+	   "translationKey": "Procedure Orders",
+	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Procedure Order",
+	  "forwardButtonTitle" : "View",
+	  "view":"tabular"
+	 },
+	 "label": "Procedure Order",
+	 "order": 5,
+	 "requiredPrivilege": "app:orders"
 	 }
+	 
+	 
 
 
 }
