@@ -7,7 +7,7 @@
 
 
 #### Dev commands
-* `./scripts/vagrant-link.sh` to link default_config to vagrants /var/www/bahmni_config
+* `./scripts/vagrant-link.sh` to link ashwini-gudalur_config to vagrants /var/www/bahmni_config
 * `./scripts/vagrant-database.sh` to run liquibase migrations in vagrant 
 
 
