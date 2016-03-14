@@ -252,6 +252,34 @@
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/radiologyorder.sql"
         }
+    },
+    "bedoccupanyrate":{
+        "name":"Bed Utilization Rate",
+        "type":"MRSGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/bor.sql"
+        }
+    },
+    "ipfollowuplist":{
+        "name":"IP Follow Up List",
+        "type":"MRSGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/ipfollowup.sql"
+        }
+    },
+    "diagnosisReport":{
+        "name":"Patientwise Diagnosis report",
+        "type":"MRSGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/patientwisediagnosis.sql"
+        }
+    },
+    "admissionreport":{
+        "name":"IP Analysis - Tribal/Non tribal IP Admission count",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/admissionvisitcount.sql"
+        }
+
     }
     
     
