@@ -19,9 +19,10 @@ class sale_order(osv.osv):
             partner_attri_cnt=self.pool.get("res.partner.attributes").search(cr,uid,[('partner_id','=',partner.id)])
             if len(partner_attri_cnt) > 0:
                 partner_attribute=self.pool.get("res.partner.attributes").browse(cr,uid,partner_attri_cnt[0])
+                _logger.error("_______________%s",partner_attribute.x_Tribe)
                 res[sale_order.id] = partner_attribute.x_Tribe
             else:
-                res[sale_order.id]=" "
+                res[sale_order.id]=""
         return res
 
     def _get_partner_attribute_Tribe_details(self, cr, uid, ids, name, args, context=None):
@@ -34,7 +35,7 @@ class sale_order(osv.osv):
                 partner_attribute=self.pool.get("res.partner.attributes").browse(cr,uid,partner_attri_cnt[0])
                 res[sale_order.id] = partner_attribute.x_Is_Tribal
             else:
-                res[sale_order.id]="N/A"
+                res[sale_order.id]=""
         return res
     def _get_partner_attribute_Sangam_details(self, cr, uid, ids, name, args, context=None):
         res = {}
@@ -58,7 +59,7 @@ class sale_order(osv.osv):
                 partner_attribute=self.pool.get("res.partner.attributes").browse(cr,uid,partner_attri_cnt[0])
                 res[sale_order.id] = partner_attribute.x_Is_Premium_Paid
             else:
-                res[sale_order.id]="N/A"
+                res[sale_order.id]=""
         return res
     def onchange_partner_id(self, cr, uid,ids, partner_id, context = None):
         res = super(sale_order, self).onchange_partner_id(cr, uid, ids,partner_id,context=context)
@@ -75,7 +76,7 @@ class sale_order(osv.osv):
                 res['value']['partner_is_tribe']= ''
                 res['value']['partner_is_sangam']= ''
                 res['value']['partner_is_Premium']= ''
-        return res
+        return res;
 
     _columns = {
         'partner_caste': fields.function(_get_partner_attribute_details, type='char', string ='Tribe'),

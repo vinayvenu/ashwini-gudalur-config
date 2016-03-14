@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_voucher_shop_id_form" model="ir.ui.view">
+            <field name="name">account.voucher.receipt.form</field>
+            <field name="model">account.voucher</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="bahmni_customer_payment.jss_invoice_form_add_discount"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='balance_amount']" position="after">
+                    <field name="shop_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
