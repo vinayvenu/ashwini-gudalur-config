@@ -1,4 +1,4 @@
-select (pn.given_name,pn.family_name) as Name,p.gender,padd.city_village as Area,padd.address2 as Village ,
+select CONCAT(pn.given_name,pn.family_name) as Name,p.gender as Gender,padd.city_village as Area,padd.address2 as Village ,
   GROUP_CONCAT(DISTINCT(cdvn.name))as Diagnosis,GROUP_CONCAT(DISTINCT(obs.value_text)) as 'ADT Notes' from  confirmed_diagnosis_view_new cdvn
   left join visit v on cdvn.visit_id=v.visit_id
   left join encounter e on v.visit_id = e.visit_id
