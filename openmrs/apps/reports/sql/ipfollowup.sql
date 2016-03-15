@@ -6,5 +6,5 @@ select CONCAT(pn.given_name,pn.family_name) as Name,p.gender as Gender,padd.city
   left join person p on cdvn.person_id=p.person_id
   left join person_name pn on p.person_id = pn.person_id
   left join person_address padd on p.person_id = padd.person_id
-  where v.date_created  between '#startDate#' and '#endDate#'
+  where cast(v.date_created as DATE)  between '#startDate#' and '#endDate#'
 group by cdvn.visit_id;
