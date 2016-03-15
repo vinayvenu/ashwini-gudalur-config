@@ -19,6 +19,9 @@
                 <xpath expr="//field[@name='partner_is_sangam']" position="after">
                     <field name="partner_is_Premium"/>
                 </xpath>
+                <xpath expr="//field[@name='partner_is_Premium']" position="after">
+                    <field name="partner_visting"/>
+                </xpath>
             </field>
         </record>
     </data>
