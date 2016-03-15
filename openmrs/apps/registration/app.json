@@ -18,13 +18,11 @@
         ],
 	
         "config" : {
-		"mandatoryPersonAttributes" : [
-	    	   "Tribe",
-		   "Is Tribal",
-		   "Is Sangam", 
-		   "Is Premium Paid"                 
-
-            ],
+            "mandatoryPersonAttributes" : [
+                "Tribe",
+                "Is_Tribal",
+                "Is_Sangam",
+                "Is_Premium_Paid"],
 	    "patientInformation": {
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
