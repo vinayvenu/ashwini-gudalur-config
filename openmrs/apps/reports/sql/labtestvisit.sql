@@ -1,54 +1,11 @@
-Select (select count(*) from patient p
-  join person_attribute pa on p.patient_id=pa.person_id and pa.person_attribute_type_id=27 AND pa.value=1
-  join visit v on p.patient_id = v.patient_id
-  join visit_type vt on vt.visit_type_id = v.visit_type_id and vt.visit_type_id=3
-  join encounter e on e.visit_id=v.visit_id
-  join obs o on o.encounter_id=e.encounter_id and o.value_numeric is NOT NULL or o.value_coded is not null or o.value_text is not null
-  join orders od on o.order_id=od.order_id and order_type_id=3
+select count(o.obs_id) as LabTest,visit_type.name as 'Visit Location',case when (pa.value=1) then 'Tribal'
+when (pa.value=2) then 'Non Tribal' else '' end as 'Tribal or Non Tribal'from obs o join orders od on o.order_id=od.order_id and order_type_id=3
   JOIN concept c on c.concept_id = o.concept_id
-  join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26 where o.date_created between '#startDate#' and '#endDate#') as TribalIPD,
-  (select count(*) from patient p
-  join person_attribute pa on p.patient_id=pa.person_id and pa.person_attribute_type_id=27 AND pa.value=1
-  join visit v on p.patient_id = v.patient_id
-  join visit_type vt on vt.visit_type_id = v.visit_type_id and vt.visit_type_id=4 or vt.visit_type_id=9
-  join encounter e on e.visit_id=v.visit_id
-  join obs o on o.encounter_id=e.encounter_id and o.value_numeric is NOT NULL or o.value_coded is not null or o.value_text is not null
-  join orders od on o.order_id=od.order_id and order_type_id=3
-  JOIN concept c on c.concept_id = o.concept_id
-  join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26 where o.date_created between '#startDate#' and '#endDate#') as TribalOPD,
-  (select count(*) from patient p
-  join person_attribute pa on p.patient_id=pa.person_id and pa.person_attribute_type_id=27 AND pa.value=1
-  join visit v on p.patient_id = v.patient_id
-  join visit_type vt on vt.visit_type_id = v.visit_type_id and vt.visit_type_id=6
-  join encounter e on e.visit_id=v.visit_id
-  join obs o on o.encounter_id=e.encounter_id and o.value_numeric is NOT NULL or o.value_coded is not null or o.value_text is not null
-  join orders od on o.order_id=od.order_id and order_type_id=3
-  JOIN concept c on c.concept_id = o.concept_id
-  join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26 where o.date_created between '#startDate#' and '#endDate#') as TribalEmergency,
-(select count(*) from patient p
-  join person_attribute pa on p.patient_id=pa.person_id and pa.person_attribute_type_id=27 AND pa.value=2
-  join visit v on p.patient_id = v.patient_id
-  join visit_type vt on vt.visit_type_id = v.visit_type_id and vt.visit_type_id=3
-  join encounter e on e.visit_id=v.visit_id
-  join obs o on o.encounter_id=e.encounter_id and o.value_numeric is NOT NULL or o.value_coded is not null or o.value_text is not null
-  join orders od on o.order_id=od.order_id and order_type_id=3
-  JOIN concept c on c.concept_id = o.concept_id
-  join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26 where o.date_created between '#startDate#' and '#endDate#') as NonTribalIPD,
-       (select count(*) from patient p
-         join person_attribute pa on p.patient_id=pa.person_id and pa.person_attribute_type_id=27 AND pa.value=2
-         join visit v on p.patient_id = v.patient_id
-         join visit_type vt on vt.visit_type_id = v.visit_type_id and vt.visit_type_id=4 or vt.visit_type_id=9
-         join encounter e on e.visit_id=v.visit_id
-         join obs o on o.encounter_id=e.encounter_id and o.value_numeric is NOT NULL or o.value_coded is not null or o.value_text is not null
-         join orders od on o.order_id=od.order_id and order_type_id=3
-         JOIN concept c on c.concept_id = o.concept_id
-         join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26 where o.date_created between '#startDate#' and '#endDate#') as NonTribalOPD,
-       (select count(*) from patient p
-         join person_attribute pa on p.patient_id=pa.person_id and pa.person_attribute_type_id=27 AND pa.value=2
-         join visit v on p.patient_id = v.patient_id
-         join visit_type vt on vt.visit_type_id = v.visit_type_id and vt.visit_type_id=6
-         join encounter e on e.visit_id=v.visit_id
-         join obs o on o.encounter_id=e.encounter_id and o.value_numeric is NOT NULL or o.value_coded is not null or o.value_text is not null
-         join orders od on o.order_id=od.order_id and order_type_id=3
-         JOIN concept c on c.concept_id = o.concept_id
-         join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26 where o.date_created between '#startDate#' and '#endDate#') as NonTribalEmergency;
+  join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26
+  join encounter e on e.encounter_id = o.encounter_id
+  join visit v on v.visit_id = e.visit_id
+  join visit_type on visit_type.visit_type_id = v.visit_type_id
+  left join person p on p.person_id = o.person_id
+  left join person_attribute pa on p.person_id = pa.person_id and pa.person_attribute_type_id=27
+where (o.value_numeric is NOT NULL or o.value_coded is not null or o.value_text is not null ) and cast (o.date_created as DATE) between '#startDate#' and '#endDate#'
+GROUP BY pa.value,visit_type.name;
