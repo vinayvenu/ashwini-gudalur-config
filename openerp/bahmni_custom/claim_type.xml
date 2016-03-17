@@ -7,14 +7,16 @@
             <field name="model">claim.type</field>
             <field name="arch" type="xml">
                 <form string="Claim Type" version="7.0">
+                    <group>
                         <field name="claim_type"/>
                         <field name="erp_patient_id"/>
+                    </group>
                 </form>
             </field>
         </record>
 
 
-        <record id="syncable_units_tree_view" model="ir.ui.view">
+        <record id="claim_type_tree_view" model="ir.ui.view">
             <field name="name">claim.type.tree</field>
             <field name="model">claim.type</field>
             <field name="type">tree</field>
