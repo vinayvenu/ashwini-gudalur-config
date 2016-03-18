@@ -55,7 +55,7 @@
                 "Parent":"patient"
             },
 
-            "autoCompleteFields":["familyName", "caste"],
+            "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "TR",
             "defaultVisitType": "General",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",

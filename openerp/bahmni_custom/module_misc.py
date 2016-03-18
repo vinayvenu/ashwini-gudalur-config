@@ -8,7 +8,7 @@ class res_partner(osv.osv):
     _inherit = "res.partner"
     _order = "id"
     _columns={
-        'tin_number':fields.char('TIN'),
-        }
+        'tin_number':fields.char(string='TIN'),
+    }
 res_partner()
 
