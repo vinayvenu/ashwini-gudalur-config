@@ -22,7 +22,8 @@
                 "Tribe",
                 "Is_Tribal",
                 "Is_Sangam",
-                "Is_Premium_Paid"],
+                "Is_Premium_Paid",
+                "Visiting"],
 	    "patientInformation": {
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
