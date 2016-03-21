@@ -12,7 +12,6 @@ class syncjob_department_category_mapping(osv.osv):
 
     _columns = {
         'department_name': fields.char('Department',required=True),
-        'pankaj': fields.char('Pankaj',required=True),
         'category_id':fields.many2one('product.category','Category Id',required=True,unique=True),
     }
 
