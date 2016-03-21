@@ -99,7 +99,6 @@ class sale_order(osv.osv):
             partner_attri_cnt=self.pool.get("res.partner.attributes").search(cr,uid,[('partner_id','=',partner_id)])
             if len(partner_attri_cnt) > 0:
                 partner_attribute=self.pool.get("res.partner.attributes").browse(cr,uid,partner_attri_cnt[0])
-                true
                 res['value']['partner_caste'] = partner_attribute.x_Tribe
                 res['value']['partner_is_tribe'] = self.getYesOrNo(partner_attribute.x_Is_Tribal)
                 res['value']['partner_is_sangam'] = self.getYesOrNo(partner_attribute.x_Is_Sangam)
