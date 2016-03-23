@@ -87,9 +87,9 @@
             },
             "fieldValidation" : {
               "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "familyName" : {"pattern" : "[a-zA-Z.()]{0,}", "errorMessage" : "Should contain characters"},
-                "givenName" : {"pattern" : "[a-zA-Z'  ]{0,}", "errorMessage" : "Should contain characters"},
-                "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
+                "familyName" : {"pattern" : "[a-zA-Z()/. -]{0,}", "errorMessage" : "Should contain characters"},
+                "givenName" : {"pattern" : "[a-zA-Z()/. -]{0,}", "errorMessage" : "Should contain characters"},
+                "middleName" : {"pattern" : "[a-zA-Z()/. -]{0,}", "errorMessage" : "Should contain characters"}
             },
             "patientSearch": {
                 "address": {

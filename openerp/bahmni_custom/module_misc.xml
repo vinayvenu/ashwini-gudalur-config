@@ -55,4 +55,19 @@
             </field>
         </record>
     </data>
+    <data>
+        <record id="bahmni_custom_sale_config" model="ir.ui.view">
+            <field name="name">bahmni_custom_sale_config</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_sale_config_settings"/>
+            <field name="arch" type="xml">
+                <div name="Sale Features" position="inside">
+                    <div>
+                        <field name="default_tax_percent" class="oe_inline"/>
+                        <label for="default_tax_percent"/>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
 </openerp>

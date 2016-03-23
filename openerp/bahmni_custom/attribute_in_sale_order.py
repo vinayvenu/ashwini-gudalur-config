@@ -66,7 +66,7 @@ class sale_order(osv.osv):
         res = {}
         for sale_order in self.browse(cr, uid, ids):
             if (sale_order.shop_id):
-                map_id_List = self.pool.get('order.type.shop.map').search(cr, uid, [('id', '=', sale_order.shop_id.id)], context=context)
+                map_id_List = self.pool.get('order.type.shop.map').search(cr, uid, [('shop_id', '=', sale_order.shop_id.id)], context=context)
                 if(map_id_List):
                     order_type_map = self.pool.get('order.type.shop.map').browse(cr, uid, map_id_List[0], context=context)
                     res[sale_order.id] = order_type_map.order_type
