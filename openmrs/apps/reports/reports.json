@@ -276,6 +276,7 @@
     },
     "admissionreport":{
         "name":"IP Analysis - Tribal/Non tribal IP Admission count",
+        "type":"MRSGeneric",
         "config":{
             "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/admissionvisitcount.sql"
         }
