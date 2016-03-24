@@ -11,5 +11,5 @@ select count(*) from (SELECT count(*)
                                  LEFT JOIN referral_type rt on rt.id = ref.referral_type_id
                                  left JOIN referral_reason refs on refs.id = ref.referral_reason_id
                                  LEFT JOIN organization org on org.id = ref.organization_id
-                             where ref.referral_request_date between '2016-02-01' and '2016-02-26'
+                             where ref.referral_request_date between '#startDate#' and '#endDate#'
                              GROUP BY ref.referral_request_date) as NoofReferralTest;
