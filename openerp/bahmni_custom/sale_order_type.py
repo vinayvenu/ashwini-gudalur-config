@@ -181,7 +181,8 @@ class sale_order_line(osv.osv):
             _logger.error("Life Date From DB= %s",life_date)
             _logger.error("Life Date From DB= %s",type(life_date))
             _logger.error("Life Date From DB= %s",life_date.strftime('%d/%m/%Y'))
-            life_date = life_date.strftime('%d/%m/%Y') if (type(life_date) == datetime) else None
+            if life_date:
+                life_date = life_date.strftime('%d/%m/%Y') if (type(life_date) == datetime) else None
             _logger.error("Life Date = %s",life_date)
         return {'value' : {'price_unit': sale_price ,'expiry_date':life_date}}
 
