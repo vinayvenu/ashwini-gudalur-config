@@ -3,4 +3,6 @@ import attribute_in_sale_order
 import claim_type
 import sale_order_type
 import shop_account_voucher
+import product_category_department
+import chargetype_category_mapping
 
