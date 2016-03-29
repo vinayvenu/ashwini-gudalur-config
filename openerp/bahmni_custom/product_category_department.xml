@@ -40,7 +40,7 @@
         <menuitem action="action_syncjob_department_category_mapping"
                   id="menu_action_syncjob_department_category_mapping"
                   parent="base.menu_base_config" groups="base.group_system"
-                  sequence="9"/>
+                  sequence="6"/>
 
     </data>
 </openerp>

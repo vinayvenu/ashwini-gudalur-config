@@ -154,12 +154,29 @@ class sale_order(osv.osv):
             res.append(row[0])
         return res;
 
+
+    def _get_provs(self, cr, uid, context={}):
+        cr.execute('SELECT name FROM providers')
+        rows = cr.fetchall()
+        dataset=[]
+        for row in rows:
+            dataset.append((row[0],row[0]));
+        return dataset
+
     _columns={
         'care_setting': fields.selection([('opd', 'OPD'),('ipd', 'IPD')], 'Care Setting',required='True'),
+        'provider_name': fields.selection(_get_provs, 'Provider',required='True'),
     }
 
 sale_order()
 
+class providers(osv.osv):
+    _name = "providers"
+    _description = "Providers in ashwini"
+    _columns = {
+        'name': fields.char('Provider Name', required=True),
+        }
+providers()
 
 class sale_order_line(osv.osv):
     _name = "sale.order.line"
