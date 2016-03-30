@@ -2,6 +2,7 @@ from __future__ import division
 import logging
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
+from datetime import datetime
 
 _logger = logging.getLogger(__name__)
 
@@ -44,7 +45,6 @@ class stock_move_split_lines_exten(osv.osv_memory):
             sp_incl_tax = mrp;
         if(default_tax_percent>0):
             divisor = 1+(default_tax_percent/100)
-            _logger.error("Divisior = %f",divisor)
             actual_sp = sp_incl_tax/divisor;
         else:
             actual_sp = sp_incl_tax;
@@ -111,9 +111,9 @@ class stock_production_lot(osv.osv):
     _inherit = 'stock.production.lot'
 
     def write(self, cr, uid, ids, values, context=None):
-        _logger.error("Values 1n = %s",values)
         sales_price = values.get('sale_price')
         mrp = values.get('mrp')
+        life_date = values.get('life_date')
         default_tax_percent = self.pool.get('ir.values').get_default(cr, uid, 'sale.config.settings', 'default_tax_percent')
         if sales_price and mrp:
             sp_incl_tax = sales_price + (sales_price * (default_tax_percent/100))
@@ -121,10 +121,14 @@ class stock_production_lot(osv.osv):
             if(sp_incl_tax>mrp):
                 raise osv.except_osv(_('Processing Error!'), _('Batch number has : Sales Price + Tax more that mrp :(%f+5%%) %f > %f)!') \
                                      % (sales_price, sp_incl_tax, mrp))
+        if(life_date):
+            if (datetime.strptime(life_date,'%Y-%m-%d') <= datetime.today()):
+                raise osv.except_osv(_('Processing Error!'), _('End of life should be greater than today'))
+        else:
+            raise osv.except_osv(_('Processing Error!'), _('End of life date is a mandatory field'))
         return super(stock_production_lot, self).write(cr, uid, ids, values, context)
 
     def create(self, cr, uid, values, context=None):
-        _logger.error("Values = %s",values)
         sales_price = values.get('sale_price')
         mrp = values.get('mrp')
         default_tax_percent = self.pool.get('ir.values').get_default(cr, uid, 'sale.config.settings', 'default_tax_percent')
@@ -168,3 +172,4 @@ class custom_sale_configuration(osv.osv_memory):
         config = self.browse(cr, uid, ids[0], context)
         ir_values.set_default(cr, uid, 'sale.config.settings', 'default_tax_percent', config.round_off_by)
 custom_sale_configuration()
+

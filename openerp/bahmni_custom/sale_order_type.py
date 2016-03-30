@@ -45,25 +45,18 @@ class sale_order(osv.osv):
         sale_order_line=self.pool.get("sale.order.line").search(cr,uid,[('order_id','=',ids[0])])
         if len(sale_order_line) > 0:
             for sol in sale_order_line:
-                _logger.error("Sol=%s",sol)
                 soltemp= self.pool.get("sale.order.line").browse(cr,uid,sol)
                 template = self.get_prod_template(cr,uid,sol)
                 stock_prod_lot = self.pool.get('stock.production.lot')
                 prod_prod = self.pool.get('product.product')
                 prodlot_context = self._get_prodlot_context(cr, uid,shop_id, context=context)
                 if(template.type != 'service'):
-                    _logger.error("Batch Id: %s",soltemp.batch_id)
                     if soltemp.batch_id and soltemp.batch_id.id>0:
                         prod_context = self._get_product_context(cr, uid,shop_id,soltemp.batch_id.id, context=context)
-                        _logger.error("prod_context: %s",prod_context)
                         prodlot = stock_prod_lot.browse(cr, uid, soltemp.batch_id.id, context=prodlot_context)
                         product_id = []
-                        _logger.error("soltemp.batch_id Id: %s",soltemp.batch_id)
-                        _logger.error("prodlot.product_id Id: %s",prodlot.product_id)
                         product_id.append(prodlot.product_id.id)
-                        _logger.error("Prod Id: %s",product_id)
                         actual_stock = prod_prod._get_actual_stock(cr, uid, product_id, '', [], prod_context)
-                        _logger.error("Prod Stock: %s",actual_stock)
                         actual_qty = actual_stock[prodlot.product_id.id]
                         if(soltemp.product_uom_qty>actual_qty):
                             res.append({'error':'Quantity Not Available','item':soltemp.name, 'Available':actual_qty, 'Requested':soltemp.product_uom_qty})
@@ -112,14 +105,12 @@ class sale_order(osv.osv):
             else:
                 commoncatlist=self.pool.get("product.category").search(cr,uid,[('name','=','Common')])
                 commoncat = commoncatlist[0];
-                _logger.error("common_cat===%s",commoncat)
                 not_a_common_sol = self.get_not_a_common_sale_order_line(cr,uid,sale_order_line,commoncat)
                 if not not_a_common_sol:
                     return False
                 else:
                     catIds = self.get_array_of_category_ids(cr,uid,not_a_common_sol)
                     catIds.append(commoncat);
-                    _logger.error("not_common_cat===%s",catIds)
                 for sol in sale_order_line:
                         _logger.error("Sol=%s",sol)
                         template = self.get_prod_template(cr,uid,sol)
@@ -146,7 +137,6 @@ class sale_order(osv.osv):
     def get_array_of_category_ids(self, cr,uid,sol):
         res=[]
         template = self.get_prod_template(cr,uid,sol)
-        _logger.error("Template=%s",template)
         cr.execute("""select category_id from syncjob_department_category_mapping where department_name=
                       (select department_name from syncjob_department_category_mapping where category_id="""+str(template.categ_id.id)+")")
         rows = cr.fetchall()
@@ -195,12 +185,8 @@ class sale_order_line(osv.osv):
         for prodlot in stock_prod_lot.browse(cr, uid, [batch_id], context=context):
             sale_price =  prodlot.sale_price
             life_date = prodlot.life_date and datetime.strptime(prodlot.life_date, tools.DEFAULT_SERVER_DATETIME_FORMAT)
-            _logger.error("Life Date From DB= %s",life_date)
-            _logger.error("Life Date From DB= %s",type(life_date))
-            _logger.error("Life Date From DB= %s",life_date.strftime('%d/%m/%Y'))
             if life_date:
-                life_date = life_date.strftime('%d/%m/%Y') if (type(life_date) == datetime) else None
-            _logger.error("Life Date = %s",life_date)
+                life_date = life_date.strftime(tools.DEFAULT_SERVER_DATETIME_FORMAT) if (type(life_date) == datetime) else None
         return {'value' : {'price_unit': sale_price ,'expiry_date':life_date}}
 
 sale_order_line()

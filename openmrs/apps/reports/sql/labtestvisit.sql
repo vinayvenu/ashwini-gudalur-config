@@ -1,5 +1,5 @@
-select count(o.obs_id) as LabTest,visit_type.name as 'Visit Location',case when (pa.value=1) then 'Tribal'
-when (pa.value=2) then 'Non Tribal' else '' end as 'Tribal or Non Tribal'from obs o join orders od on o.order_id=od.order_id and order_type_id=3
+select count(o.obs_id) as LabTest,visit_type.name as 'Visit Location',case when (pa.value=1 or pa.value= 2146) then 'Tribal'
+when (pa.value=2 or pa.value= 2147) then 'Non Tribal' else '' end as 'Tribal or Non Tribal'from obs o join orders od on o.order_id=od.order_id and order_type_id=3
   JOIN concept c on c.concept_id = o.concept_id
   join concept_class cc on cc.concept_class_id = c.class_id and cc.concept_class_id=26
   join encounter e on e.encounter_id = o.encounter_id

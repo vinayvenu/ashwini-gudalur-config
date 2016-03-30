@@ -16,7 +16,6 @@ class claim_type(osv.osv):
     def create(self, cr, uid, values, context=None):
 
         res=self.pool.get('claim.type').search(cr, uid, [('erp_patient_id', '=', values['erp_patient_id'])], limit=1)
-        _logger.error('claim_type------RESult----------%s',res)
         if len(res)>0:
             # super(osv.osv, self).write(cr, uid, ids, vals, context=context)
             # record = self.browse(cr,uid,res)
@@ -26,6 +25,5 @@ class claim_type(osv.osv):
             # _logger('claim_type------create----------%s',erp_patient)
         else :
             erp_patient = osv.Model.create(self,cr, uid, values, context)
-            _logger.error('claim_type------update----------%s',erp_patient)
         return erp_patient
 claim_type()

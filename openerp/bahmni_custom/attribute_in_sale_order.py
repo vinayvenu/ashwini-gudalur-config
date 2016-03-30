@@ -19,7 +19,6 @@ class sale_order(osv.osv):
             partner_attri_cnt=self.pool.get("res.partner.attributes").search(cr,uid,[('partner_id','=',partner.id)])
             if len(partner_attri_cnt) > 0:
                 partner_attribute=self.pool.get("res.partner.attributes").browse(cr,uid,partner_attri_cnt[0])
-                _logger.error("_______________%s",partner_attribute.x_Tribe)
                 res[sale_order.id] = partner_attribute.x_Tribe
             else:
                 res[sale_order.id]=""
