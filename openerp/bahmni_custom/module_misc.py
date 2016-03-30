@@ -97,10 +97,18 @@ class split_in_production_lot_with_price_exten(osv.osv_memory):
                 total_move_qty = 0.0
                 default_tax_percent = self.pool.get('ir.values').get_default(cr, uid, 'sale.config.settings', 'default_tax_percent')
                 for line in lines:
+                    _logger.error("line = %s",line)
                     sp_with_tax = line.sale_price +((default_tax_percent/100)*line.sale_price)
                     if sp_with_tax>line.mrp :
                         raise osv.except_osv(_('Processing Error!'), _('Batch number %s of %s has : Sales Price + Tax more that mrp :(%f+5%%) %f > %f)!') \
                                              % (line.name, move.product_id.name, line.sale_price, sp_with_tax, line.mrp))
+
+                    _logger.error("EXP DATE=%s",line.expiry_date)
+                    if (line.expiry_date):
+                        if (datetime.strptime(line.expiry_date,'%Y-%m-%d') <= datetime.today()):
+                            raise osv.except_osv(_('Processing Error!'), _('End of life should be greater than today'))
+                    else:
+                        raise osv.except_osv(_('Processing Error!'), _('End of life date is a mandatory field'))
         return super(split_in_production_lot_with_price_exten, self).split(cr, uid, ids, move_ids, context)
 split_in_production_lot_with_price_exten()
 
@@ -114,6 +122,7 @@ class stock_production_lot(osv.osv):
         sales_price = values.get('sale_price')
         mrp = values.get('mrp')
         life_date = values.get('life_date')
+        _logger.error("Life date = %s",life_date)
         default_tax_percent = self.pool.get('ir.values').get_default(cr, uid, 'sale.config.settings', 'default_tax_percent')
         if sales_price and mrp:
             sp_incl_tax = sales_price + (sales_price * (default_tax_percent/100))
@@ -125,7 +134,8 @@ class stock_production_lot(osv.osv):
             if (datetime.strptime(life_date,'%Y-%m-%d') <= datetime.today()):
                 raise osv.except_osv(_('Processing Error!'), _('End of life should be greater than today'))
         else:
-            raise osv.except_osv(_('Processing Error!'), _('End of life date is a mandatory field'))
+            if context is not None:
+                raise osv.except_osv(_('Processing Error!'), _('End of life date is a mandatory field'))
         return super(stock_production_lot, self).write(cr, uid, ids, values, context)
 
     def create(self, cr, uid, values, context=None):

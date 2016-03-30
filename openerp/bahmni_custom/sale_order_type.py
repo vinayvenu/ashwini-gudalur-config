@@ -155,7 +155,7 @@ class sale_order(osv.osv):
 
     _columns={
         'care_setting': fields.selection([('opd', 'OPD'),('ipd', 'IPD')], 'Care Setting',required='True'),
-        'provider_name': fields.selection(_get_provs, 'Provider',required='True'),
+        'provider_name': fields.selection(_get_provs, 'Provider'),
     }
 
 sale_order()
