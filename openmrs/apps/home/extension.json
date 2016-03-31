@@ -87,5 +87,15 @@
     "icon": "fa-user",
     "order": 11,
     "requiredPrivilege": "App: appointmentschedulingui.home"
+  },
+  "programs": {
+    "id": "bahmni.programs",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
+    "url": "../clinical/#/programs/patient/search",
+    "icon": "fa-tasks",
+    "order": 2,
+    "requiredPrivilege": "app:clinical"
   }
 }
