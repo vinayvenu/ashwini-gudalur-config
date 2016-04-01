@@ -108,7 +108,7 @@
                 "displayOrder": 7,
                 "dashboardConfig": {
                     "conceptNames": [
-                        "Summary"
+                        "Radiology order fulfillment form"
                     ],
                     "numberOfVisits": 4
                 }
@@ -120,7 +120,7 @@
                 "displayOrder": 21,
                 "dashboardConfig": {
                     "conceptNames": [
-                        "Summary"
+                        "Dental order fulfillment form"
                     ],
                     "numberOfVisits": 4
                 }
@@ -132,55 +132,22 @@
                 "displayOrder": 22,
                 "dashboardConfig": {
                     "conceptNames": [
-                        "Summary"
+                        "USG order fulfillment form"
                     ],
                     "numberOfVisits": 4
                 }
             },
             
-               "ProcedureOrders": {
+            "ProcedureOrders": {
                 "orderType": "Procedure Order",
                 "type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
                 "displayOrder": 22,
                 "dashboardConfig": {
                     "conceptNames": [
-                        "Procedure Order fullfillment notes"
+                        "Procedure Order Fulfillment Form"
                     ],
                     "numberOfVisits": 4
-                }
-            },
-            "pacs": {
-                "orderType": "Radiology Order",
-                "type": "pacsOrders",
-                "translationKey" : "DASHBOARD_TITLE_PACS_KEY",
-                "displayOrder": 8,
-                "dashboardConfig": {
-                    "pacsImageUrl": "/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
-                    "numberOfVisits": 4
-                }
-            },
-            "labOrdersDisplayControl": {
-                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "type": "ordersControl",
-                "orderType": "Lab Order",
-                "showDetailsButton": true,
-                "displayOrder": 9,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
                 }
             },
             "bacteriologyResults":{
