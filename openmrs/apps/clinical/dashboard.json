@@ -150,18 +150,6 @@
                     "numberOfVisits": 4
                 }
             },
-            "bacteriologyResults":{
-                "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type": "bacteriologyResultsControl",
-                "scope": "All",
-                "orderType": "",
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "BACTERIOLOGY CONCEPT SET"
-                    ]
-
-                }
-            },
             "labResults": {
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type": "labOrders",
@@ -235,26 +223,6 @@
                     }
                 }
             },
-            "secondVitals": {
-                "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
-                "type": "second vitals",
-                "isObservation": true,
-                "displayOrder": 13,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
             "historyAndExaminations": {
                 "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type": "vitals",
@@ -269,26 +237,6 @@
                 "expandedViewConfig": {
                     "conceptNames": [
                         "History and Examination"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
-            "gynaecology": {
-                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
-                "type": "gynaecology",
-                "isObservation": true,
-                "displayOrder": 15,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Gynaecology"
                     ],
                     "numberOfVisits": 2,
                     "showDetailsButton": true,
