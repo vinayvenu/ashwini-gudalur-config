@@ -114,7 +114,6 @@
                 "type": "investigationResult",
                 "displayOrder": 6,
                 "config": {
-                    "title": "Lab Investigations",
                     "translationKey":"LAB_INVESTIGATION",
                     "showChart": true,
                     "showTable": false,
@@ -154,7 +153,6 @@
             },
         "dischargeNotes":{
         "type": "observation",
-        "title": "Discharge Summary",
         "displayOrder": 9,
          "translationKey": "Discharge Summary",
         "config": {
