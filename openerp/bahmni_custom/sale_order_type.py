@@ -67,7 +67,7 @@ class sale_order(osv.osv):
                             for tax in soltemp.tax_id:
                                 tax_amount = tax_amount + tax.amount
                             _logger.error("Taxes = %f",tax_amount);
-                        sp_incl_tax = sales_price + tax_amount
+                        sp_incl_tax = sales_price + sales_price*tax_amount
                         if(sp_incl_tax>mrp):
                             res.append({'error':'Sales Price Including Tax more than MRP','item':soltemp.name, 'Sales With Tax':sp_incl_tax, 'MRP':mrp})
                     else:

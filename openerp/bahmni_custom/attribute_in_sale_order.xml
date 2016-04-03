@@ -38,5 +38,21 @@
             </field>
         </record>
     </data>
+
+    <data>
+        <record id="sale_form_add_batch_price_extn" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="bahmni_stock_batch_sale_price.sale_form_add_batch_price"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='batch_id']" position="replace" >
+                    <field name="batch_id" domain="[('product_id','=',product_id)]"
+                           context="{'only_available_batch': True, 'product_uom': product_uom, 'shop':parent.shop_id, 'product_uom_qty':product_uom_qty}"
+                           on_change="batch_id_change(batch_id,product_id,context)"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
 </openerp>
 

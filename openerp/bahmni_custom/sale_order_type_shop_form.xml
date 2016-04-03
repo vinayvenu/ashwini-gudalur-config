@@ -15,6 +15,20 @@
     </data>
 
     <data>
+        <record model="ir.ui.view" id="account_voucher_shop_id_tree">
+            <field name="name">account.voucher.receipt.tree</field>
+            <field name="model">account.voucher</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="shop_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+    <data>
         <record id="providers_form_view" model="ir.ui.view">
             <field name="name">providers.form</field>
             <field name="type">form</field>

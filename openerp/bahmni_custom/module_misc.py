@@ -157,6 +157,43 @@ class stock_production_lot(osv.osv):
             'name': fields.char('Batch Number', size=64)
             }
 
+    def _get_locationForshop(self, cr, uid, shop_id, context=None):
+        shop_obj = self.pool.get('sale.shop')
+        shop = shop_obj.browse(cr, uid, shop_id)
+        if(not shop_id):
+            return 0
+        if shop:
+            location_id = shop.warehouse_id and shop.warehouse_id.lot_stock_id.id
+            if location_id:
+                return location_id
+        return 0
+
+    def name_search(self, cr, uid, name, args=None, operator='ilike', context=None, limit=100):
+        args = args or []
+        ids = []
+        _logger.error("Only available %s",context.get('only_available_batch', False))
+        _logger.error("location id = %s",context.get('location_id', False))
+        if(context.get('only_available_batch', False)):
+            batch_stock_query = 'select prodlot_id from batch_stock_future_forecast where qty > 0'
+            for column,operator,value in args:
+                if(column == "product_id"):
+                    batch_stock_query += " and product_id = %s" % value
+            if context.get('location_id', False):
+                batch_stock_query += " and location_id = %s" % context['location_id']
+            elif context.get('shop',False) :
+                shop = self._get_locationForshop(cr,uid,context.get('shop',False))
+                if shop>0 :
+                    batch_stock_query += " and location_id = %s" % shop
+            cr.execute(batch_stock_query)
+            args += [('id', 'in', [row[0] for row in cr.fetchall()])]
+
+        if name:
+            ids = self.search(cr, uid, [('prefix', '=', name)] + args, limit=limit, context=context)
+            if not ids:
+                ids = self.search(cr, uid, [('name', 'ilike', name)] + args, limit=limit, context=context)
+        else:
+            ids = self.search(cr, uid, args, limit=limit, context=context)
+        return self.name_get(cr, uid, ids, context)
 stock_production_lot()
 
 class custom_sale_configuration(osv.osv_memory):
