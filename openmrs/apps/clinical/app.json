@@ -95,11 +95,6 @@
                     "multiSelect": true
                 },
                 "defaults" : {
-                    "Number of living children" : 1,
-                    "Accepted Family Planning methods": ["Condoms", "Pills"],
-                    "Pain management given": true,
-                    "Safe Abortion, Remarks": "Remarks",
-                    "Malaria, Death Date": "2015-12-01"
                 }
             },
             "visitPage": {
