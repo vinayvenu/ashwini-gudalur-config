@@ -60,7 +60,7 @@
             "defaultIdentifierPrefix": "TRI",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": true,
+            "showMiddleName": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
