@@ -179,7 +179,8 @@
                         "BMI",
                         "BMI STATUS"
                     ],
-                    "numberOfVisits": 2
+                    "numberOfVisits": 2,
+                    "scope": "latest"
                 },
                 "expandedViewConfig": {
                     "conceptNames": [
