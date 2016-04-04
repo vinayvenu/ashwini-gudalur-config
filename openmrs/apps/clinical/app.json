@@ -43,13 +43,38 @@
                 "Chief Complaint Data": {
                     "allowAddMore" : true
                 },
+                "Nutritional Values":{
+                    "isTabular": true
+                },
+                "Blood Pressure":{
+                    "isTabular": true
+                },
+                "Systolic":{
+                    "disableAddNotes": true
+                },
+                "Diastolic":{
+                    "disableAddNotes": true
+                },
+                "Posture":{
+                    "buttonSelect" : true,
+                    "disableAddNotes": true
+                },
+                "Weight":{
+                    "disableAddNotes": true
+                },
+                "Height":{
+                    "disableAddNotes": true
+                },
+                "BMI":{
+                    "disableAddNotes": true
+                },
+                "BMI STATUS":{
+                    "disableAddNotes": true
+                },
                 "Chief Complaint" : {
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false,
                     "allowAddMore" : true
-                },
-                "Posture" : {
-                    "buttonSelect" : true
                 },
                 "Non-Coded Chief Complaint" : {
                     "freeTextAutocomplete" : true,
