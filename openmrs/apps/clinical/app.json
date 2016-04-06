@@ -41,7 +41,11 @@
             "allowOnlyCodedDiagnosis": false,
             "conceptSetUI": {
                 "Chief Complaint Data": {
-                    "allowAddMore" : true
+                    "allowAddMore" : true,
+                    "autocomplete" : true,
+                    "codedConceptName" :"Chief Complaint",
+                    "nonCodedConceptName" :"Non-Coded Chief Complaint",
+                    "durationRequired" : false
                 },
                 "Nutritional Values":{
                     "isTabular": true
@@ -70,15 +74,6 @@
                 },
                 "BMI STATUS":{
                     "disableAddNotes": true
-                },
-                "Chief Complaint" : {
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false,
-                    "allowAddMore" : true
-                },
-                "Non-Coded Chief Complaint" : {
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
                 },
                 "P/A Presenting Part" : {
                     "buttonSelect" : true
