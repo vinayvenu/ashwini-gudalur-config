@@ -8,7 +8,7 @@
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "displayOrder": 0,
-                "ageLimit":100,
+                "ageLimit": 100,
                 "patientAttributes": [],
                 "addressFields": [
                     "address1",
@@ -17,202 +17,50 @@
                     "countryDistrict"
                 ]
             },
-            "diagnosis": {
-                "title": "Diagnosis",
-                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "name": "diagnosis",
-                "showCertainty": true,
-                "showOrder": true,
-                "displayOrder": 1
-            },
-
-            "disposition": {
-                "title": "Disposition",
-                "translationKey" : "DASHBOARD_TITLE_DISPOSITION_KEY",
-                "name": "disposition",
-                "numberOfVisits": 1,
-                "displayOrder": 2
-            },
-            "treatments": {
-                "title":"Treatments",
-                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-                "name": "treatment",
-                "displayOrder": 3,
-                "dashboardParams": {
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showRoute": true,
-                    "showDrugForm": true,
-                    "numberOfVisits": 5,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
-                },
-                "allTreatmentDetails": {
-                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showRoute": true,
-                    "showDrugForm": true,
-                    "numberOfVisits": 10,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
-                }
-            },
-            "radiology": {
-                "title": "Radiology",
-                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
-                "name": "radiology",
-                "displayOrder": 4
-            },
-            "programs": {
-                "title":"Programs",
-                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "name": "programs",
-                "displayOrder": 5
-            },
-            "navigationLinksControl": {
-                "title":"Navigation Links Control",
-                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "name": "navigationLinksControl",
-                "displayOrder": 6,
-                "links": [
-                    {
-                        "translationKey":"HOME_DASHBOARD_KEY",
-                        "url": "../home/#/dashboard"
-                    },
-                    {
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
-                        "translationKey":"PATIENT_VISIT_PAGE_KEY"
-                    },
-                    {
-                        "translationKey":"PATIENT_ADT_PAGE_KEY",
-                        "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
-                    },
-                    {
-                        "translationKey":"PATIENT_DASHBOARD_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
-                    },
-                    {
-                        "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                    },
-                    {
-                        "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
-                        "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
-                    },
-                    {
-                        "translationKey":"CONSULTATION_PAGE_KEY",
-
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
-                    }
-                ]
-            },
-            "radiologyOrders": {
-                "orderType": "Radiology Order",
-                "title":"Radiology Orders",
-                "name": "ordersControl",
-                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
-                "displayOrder": 7,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Radiology order fulfillment form"
-                    ],
-                    "numberOfVisits": 4
-                }
-            },
-            "DentalOrders": {
-                "orderType": "Dental Order",
-                "title":"Dental Orders",
-                "name": "ordersControl",
-                "translationKey": "DASHBOARD_TITLE_DENTAL_ORDERS_KEY",
-                "displayOrder": 21,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Dental order fulfillment form"
-                    ],
-                    "numberOfVisits": 4
-                }
-            },
-            "USGOrders": {
-                "orderType": "USG Order",
-                "title":"USG Orders",
-                "name": "ordersControl",
-                "translationKey": "DASHBOARD_TITLE_USG_ORDERS_KEY",
-                "displayOrder": 22,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "USG order fulfillment form"
-                    ],
-                    "numberOfVisits": 4
-                }
-            },
-            
-            "ProcedureOrders": {
-                "orderType": "Procedure Order",
-                "title":"Procedure Orders",
-                "name": "ordersControl",
-                "translationKey": "DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
-                "displayOrder": 22,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Procedure Order Fulfillment Form"
-                    ],
-                    "numberOfVisits": 4
-                }
-            },
             "labResults": {
-                "title":"Lab Results",
-                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "name": "labOrders",
-                "displayOrder": 10,
+                "displayOrder": 1,
                 "dashboardParams": {
                     "title": null,
-                    "numberOfVisits": 1,
+                    "numberOfVisits": 2,
                     "showChart": false,
                     "showTable": true,
                     "showDetailsButton": false,
                     "initialAccessionCount": 0,
                     "latestAccessionCount": 1
                 },
-                "allLabDetails": {
+                "expandedViewConfig": {
                     "numberOfVisits": 10
                 }
             },
-            "nutritionalValues": {
-                "title":"Nutritional Values",
-                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+            "historyAndExaminations": {
+                "title": "History and Examinations",
+                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "name": "vitals",
                 "isObservation": true,
-                "displayOrder": 11,
+                "displayOrder": 2,
                 "dashboardParams": {
                     "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
+                        "History and Examination"
                     ],
-                    "numberOfVisits": 2,
-                    "scope": "latest"
+                    "numberOfVisits": 2
                 },
                 "allObservationDetails": {
                     "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
+                        "History and Examination"
                     ],
-                    "numberOfVisits": 2,
-                    "scope": "latest",
+                    "numberOfVisits": 7,
                     "showDetailsButton": true,
                     "pivotTable": {}
                 }
             },
             "vitals": {
-                "title":"Vitals",
+                "title": "Vitals",
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
                 "name": "vitals",
                 "isObservation": true,
-                "displayOrder": 12,
+                "displayOrder": 3,
                 "dashboardParams": {
                     "conceptNames": [
                         "Vitals"
@@ -237,101 +85,174 @@
                     }
                 }
             },
-            "historyAndExaminations": {
-                "title":"History and Examinations",
-                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+            "treatments": {
+                "title": "Treatments",
+                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                "name": "treatment",
+                "displayOrder": 4,
+                "dashboardParams": {
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "numberOfVisits": 3,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                },
+                "allTreatmentDetails": {
+                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "numberOfVisits": 10,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                }
+            },
+            "ANC": {
+                "translationKey": "DASHBOARD_TITLE_ANC_KEY",
+                "isObservation": true,
+                "displayOrder": 5,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "ANC"
+                    ],
+                    "numberOfVisits": 5
+                },
+                "allObservationDetails": {
+                    "conceptNames": [
+                        "ANC"
+                    ],
+                    "numberOfVisits": 10,
+                    "showDetailsButton": true,
+                    "pivotTable": {}
+                }
+            },
+            "diagnosis": {
+                "title": "Diagnosis",
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                "name": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true,
+                "displayOrder": 6
+            },
+            "programs": {
+                "title": "Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "name": "programs",
+                "displayOrder": 7
+            },
+            "radiology": {
+                "title": "Radiology",
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
+                "name": "radiology",
+                "displayOrder": 8
+            },
+            "radiologyOrders": {
+                "orderType": "Radiology Order",
+                "title": "Radiology Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
+                "displayOrder": 9,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Radiology order fulfillment form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "DentalOrders": {
+                "orderType": "Dental Order",
+                "title": "Dental Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_DENTAL_ORDERS_KEY",
+                "displayOrder": 10,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Dental order fulfillment form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "USGOrders": {
+                "orderType": "USG Order",
+                "title": "USG Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_USG_ORDERS_KEY",
+                "displayOrder": 11,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "USG order fulfillment form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "ProcedureOrders": {
+                "orderType": "Procedure Order",
+                "title": "Procedure Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
+                "displayOrder": 12,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Procedure Order Fulfillment Form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "nutritionalValues": {
+                "title": "Nutritional Values",
+                "translationKey": "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "name": "vitals",
                 "isObservation": true,
-                "displayOrder": 14,
+                "displayOrder": 13,
                 "dashboardParams": {
                     "conceptNames": [
-                        "History and Examination"
+                        "HEIGHT",
+                        "Weight",
+                        "BMI",
+                        "BMI STATUS"
                     ],
-                    "numberOfVisits": 2
+                    "numberOfVisits": 2,
+                    "scope": "latest"
                 },
                 "allObservationDetails": {
                     "conceptNames": [
-                        "History and Examination"
+                        "HEIGHT",
+                        "Weight",
+                        "BMI",
+                        "BMI STATUS"
                     ],
                     "numberOfVisits": 2,
+                    "scope": "latest",
                     "showDetailsButton": true,
                     "pivotTable": {}
                 }
             },
-            "obstetrics": {
-                 "title":"Obstetrics",
-                "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
-                "name": "obstetrics",
-                "isObservation": true,
-                "displayOrder": 16,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
+            "disposition": {
+                "title": "Disposition",
+                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+                "name": "disposition",
+                "numberOfVisits": 1,
+                "displayOrder": 14
             },
             "visits": {
-                 "title":"Visits",
+                "title": "Visits",
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "name": "visits",
-                "displayOrder": 17,
+                "displayOrder": 15,
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 8,
                     "groupByVisits": true
                 }
             },
-            "diabetes": {
-                "title": "Diabetes",
-                "templateName": "Diabetes Templates",
-                "name": "diseaseTemplate",
-                "displayOrder": 18,
-                "dashboardParams": {
-                    "showOnly": []
-                },
-                "allDiseaseDetails": {
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "15",
-                        "groupBy": "encounters",
-                        "obsConcepts": [
-                            "Weight",
-                            "Height",
-                            "Systolic",
-                            "Diastolic",
-                            "Diabetes, Foot Exam",
-                            "Diabetes, Eye Exam"
-                        ],
-                        "drugConcepts": [
-                            "Ipratropium Pressurised",
-                            "Garbhpal Rasa"
-                        ],
-                        "labConcepts": [
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Albumin",
-                            "Polymorph"
-                        ]
-                    }
-                }
-            },
             "admissionDetails": {
                 "title": "Admission Details",
-                "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+                "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "name": "admissionDetails",
-                "displayOrder": 19
+                "displayOrder": 16
             }
         }
     },
@@ -341,8 +262,7 @@
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
-               "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "name": "patientInformation",
                 "patientAttributes": [
                     "caste",
@@ -431,72 +351,6 @@
                     "numberOfVisits": 10
                 },
                 "displayOrder": 5
-            },
-            "diabetes": {
-                "title": "Diabetes",
-                "templateName": "Diabetes, Progress",
-                "name": "diseaseTemplate",
-                "dashboardParams": {
-                    "showOnly": []
-                },
-                "allDiseaseDetails": {
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "10",
-                        "groupBy": "visits",
-                        "obsConcepts": [
-                            "Diabetes, Blood Pressure",
-                            "Diabetes, A1C",
-                            "Diabetes, LDL",
-                            "Diabetes, Ulcers on Feet",
-                            "Blood Sugar Fasting",
-                            "Blood Sugar PP"
-                        ],
-                        "labConcepts": [
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Cholesterol"
-                        ]
-                    }
-                },
-                "displayOrder": 6
-            }
-        }
-    },
-    "patientSummary": {
-        "translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "Bacteriology Concept Set": {
-                "displayType": "Full-Page",
-                "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "name": "obsToObsFlowSheet",
-                "dashboardParams": {
-                    "numberOfVisits": 1,
-                    "templateName": "BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept": "Specimen Collection Date",
-                    "conceptNames": [
-                        "Specimen Id"
-                    ]
-                },
-                "allDetailsParams": {
-                    "templateName": "BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept": "Specimen Collection Date"
-                }
-            },
-            "Chronic Treatment Chart": {
-                "displayType": "Full-Page",
-                "title": "Chronic Treatment Chart",
-                "name": "chronicTreatmentChart",
-                "dashboardParams": {
-                    "drugs": []
-                 },
-                 "allDetailsParams": {
-                    "drugs": []
-                 }
             }
         }
     }
