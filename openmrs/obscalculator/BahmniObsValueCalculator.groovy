@@ -138,8 +138,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             return
         }
 
-        BahmniObservation lmpObservation = find("Obstetrics, Last Menstrual Period", observations, null)
-        def calculatedConceptName = "Estimated Date of Delivery"
+        BahmniObservation lmpObservation = find("ANC, Last Menstrual Period", observations, null)
+        def calculatedConceptName = "ANC, Expected Delivery Date"
         if (hasValue(lmpObservation)) {
             parent = obsParent(lmpObservation, null)
             def calculatedObs = find(calculatedConceptName, observations, null)
