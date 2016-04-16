@@ -288,6 +288,13 @@
             "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/admissionvisitcount.sql"
         }
 
+    },
+    "scheduleh":{
+        "name":"Schedule H Sales",
+        "type":"ERPGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/scheduleH.sql"
+        }
     }
   }
 				

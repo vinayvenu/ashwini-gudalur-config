@@ -158,31 +158,14 @@ class stock_production_lot(osv.osv):
         return super(stock_production_lot, self).write(cr, uid, ids, values, context)
 
     def create(self, cr, uid, values, context=None):
-        _logger.error("Values  = %s",values)
-        _logger.error("Life date = %s",ids)
         sales_price = values.get('sale_price')
         mrp = values.get('mrp')
         default_tax_percent = self.pool.get('ir.values').get_default(cr, uid, 'sale.config.settings', 'default_tax_percent')
-        if not mrp and len(ids)>0:
-            old = self.browse(cr, uid, ids, context=context)
-            _logger.error("old=%s",old)
-            if(len(old)>0):
-                old=old[0]
-                mrp=old['mrp'];
-                _logger.error("Values  = %s",mrp)
-        if not life_date and len(ids)>0:
-            old = self.browse(cr, uid, ids, context=context)
-            if(len(old)>0):
-                life_date=old[0]['life_date'];
-                life_date=datetime.strptime(life_date, tools.DEFAULT_SERVER_DATETIME_FORMAT)
-                life_date = datetime.strftime(life_date, '%Y-%m-%d')
-                _logger.error("Values  = %s",life_date)
         if sales_price and mrp:
             sp_incl_tax = sales_price + (sales_price * (default_tax_percent/100))
             #Assuming 5% tax
             _logger.error("Default Tax Percent = %s",default_tax_percent)
             _logger.error("Sales Price = %s",(sales_price * (default_tax_percent/100)))
-
             if(sp_incl_tax>mrp):
                 raise osv.except_osv(_('Processing Error!'), _('Batch number has : Sales Price + Tax more that mrp :(%f+5%%) %f > %f)!') \
                                      % (sales_price, sp_incl_tax, mrp))
