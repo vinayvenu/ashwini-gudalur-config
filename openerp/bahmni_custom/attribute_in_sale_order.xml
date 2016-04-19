@@ -51,6 +51,9 @@
                 <xpath expr="/tree/field[@name='state']" position="before">
                     <field name="care_setting"/>
                 </xpath>
+                <xpath expr="/tree/field[@name='state']" position="before">
+                    <field name="partner_is_tribe"/>
+                </xpath>
             </field>
         </record>
     </data>
