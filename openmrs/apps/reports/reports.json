@@ -295,6 +295,20 @@
         "config":{
             "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/scheduleH.sql"
         }
+    },
+    "booksales":{
+        "name":"Books Sales",
+        "type":"ERPGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/booksale.sql"
+        }
+    },
+    "medicinesales":{
+        "name":"Medicine Sales Count",
+        "type":"ERPGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/medicinesale.sql"
+        }
     }
   }
-				
+
