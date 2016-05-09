@@ -309,6 +309,34 @@
         "config":{
             "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/medicinesale.sql"
         }
+    },
+    "ippatientdetails":{
+        "name":"IP Patient Details",
+        "type":"ERPGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/ippatientdetails.sql"
+        }
+    },
+    "ippatientdetailsbyvillage":{
+        "name":"IP Patient Details By Village",
+        "type":"ERPGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/ippatientdetailsbyvillage.sql"
+        }
+    },
+    "bedgrantpatientdetails":{
+        "name":"Bed Grand Patient Details",
+        "type":"ERPGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/bedgrantpatientdetails.sql"
+        }
+    },
+    "sicklecellpatientdetails":{
+        "name":"SickleCell Patient Details",
+        "type":"ERPGeneric",
+        "config":{
+            "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/sicklecellpatientdetails.sql"
+        }
     }
   }
 
