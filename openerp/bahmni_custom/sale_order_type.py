@@ -189,4 +189,11 @@ class sale_order_line(osv.osv):
                 life_date = life_date.strftime(tools.DEFAULT_SERVER_DATETIME_FORMAT) if (type(life_date) == datetime) else None
         return {'value' : {'price_unit': sale_price ,'expiry_date':life_date}}
 
+    def _prepare_order_line_invoice_line(self, cr, uid, line, account_id=False, context=None):
+        res = super(sale_order_line, self)._prepare_order_line_invoice_line(cr, uid, line, account_id=account_id, context=context)
+        if line.batch_id:
+            res["batch_name"] = line.batch_id.name
+        res["expiry_date"] = line.expiry_date
+        return res
+
 sale_order_line()
