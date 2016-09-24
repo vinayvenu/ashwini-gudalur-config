@@ -1,4 +1,4 @@
-SELECT rp.name,rp.ref,rpa.address2, rpt."x_Is_Tribal",spe.gender,
+SELECT rp.name,rp.ref,rpa.address2 as Area,rpa.city_village as Village, rpt."x_Is_Tribal",spe.gender,
   date_part('year',age(spe.birthdate)) as age, sv.diagnoses,
   sv.visit_startdate as admitdate,sv.visit_stopdate as dischargedate,
   sum(t.amount_total+t.discount_amount) billed,sum(paid) paid from syncjob_visit sv
@@ -9,5 +9,5 @@ SELECT rp.name,rp.ref,rpa.address2, rpt."x_Is_Tribal",spe.gender,
   LEFT JOIN visit_so_payment_rln t on t.visit_id = sv.id
 where sv.visit_type_id=1 and cast(sv.visit_stopdate as DATE) between '#startDate#' and '#endDate#'
 GROUP BY sv.visit_uuid,rp.ref,rp.name,rpa.address2,sv.diagnoses, admitdate, dischargedate,
-spe.gender,rpt."x_Is_Tribal",age
+rpa.city_village,spe.gender,rpt."x_Is_Tribal",age
 ORDER BY rpa.address2;

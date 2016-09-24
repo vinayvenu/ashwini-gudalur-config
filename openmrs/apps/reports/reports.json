@@ -352,8 +352,22 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hiv_lab_test_performed_patients.sql"
         }
     },
+	"labSS":{
+        "name": "Sickle Cell Report",
+        "type": "ElisGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/sicklecell_Test_performed_patients.sql"
+        }
+    },
+	"labNBS":{
+        "name": "Sickle Cell NBS Report",
+        "type": "ElisGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/NBS_Test_performed_patients.sql"
+        }
+    },
     "sicklecellpatientdetails":{
-        "name":"SickleCell Patient Details",
+        "name":"SickleCell Patient Treatment Bill Details",
         "type":"ERPGeneric",
         "config":{
             "sqlPath":"/var/www/bahmni_config/openmrs/apps/reports/sql/sicklecellpatientdetails.sql"
