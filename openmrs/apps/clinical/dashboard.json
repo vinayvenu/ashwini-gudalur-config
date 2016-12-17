@@ -9,7 +9,7 @@
                 "name": "patientInformation",
                 "displayOrder": 0,
                 "ageLimit": 100,
-                "patientAttributes": ["SCP Status","Blood Group Status"],
+                "patientAttributes": ["SCP Status","Blood Group Status","Is_Sangam","Is_Premium_Paid"],
                 "addressFields": [
                     "address1",
                     "address2",
