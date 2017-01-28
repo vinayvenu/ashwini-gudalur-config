@@ -394,6 +394,20 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/medicinesaletotal.sql"
         }
     },
+	"labtestcount":{
+        "name": "Total lab test count",
+        "type": "ERPGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/labtestcount.sql"
+        }
+    },
+	"stockmove":{
+        "name": "Stock Move Report",
+        "type": "ERPGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/stockmoverepo.sql"
+        }
+    },
 	"Medilist":{
         "name": "Medicine List based on supplier",
         "type": "ERPGeneric", 
