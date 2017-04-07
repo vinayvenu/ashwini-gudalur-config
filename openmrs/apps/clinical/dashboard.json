@@ -6,7 +6,7 @@
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+"type": "patientInformation",
                 "displayOrder": 0,
                 "ageLimit": 100,
                 "patientAttributes": ["SCP Status","Blood Group Status","Is_Sangam","Is_Premium_Paid"],
@@ -19,10 +19,9 @@
             },
             "labResults": {
                 "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
-                "name": "labOrders",
+"type": "labOrders",
                 "displayOrder": 1,
-                "dashboardParams": {
-                    "title": null,
+                "dashboardConfig": {
                     "numberOfVisits": 2,
                     "showChart": false,
                     "showTable": true,
@@ -35,18 +34,17 @@
                 }
             },
             "historyAndExaminations": {
-                "title": "History and Examinations",
                 "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-                "name": "vitals",
+"type": "vitals",
                 "isObservation": true,
                 "displayOrder": 2,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "History and Examination"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "History and Examination"
                     ],
@@ -56,18 +54,17 @@
                 }
             },
             "vitals": {
-                "title": "Vitals",
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
-                "name": "vitals",
+"type": "vitals",
                 "isObservation": true,
                 "displayOrder": 3,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Vitals"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Vitals"
                     ],
@@ -86,11 +83,10 @@
                 }
             },
             "treatments": {
-                "title": "Treatments",
                 "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-                "name": "treatment",
+"type": "treatment",
                 "displayOrder": 4,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showFlowSheet": true,
                     "showListView": true,
                     "showRoute": true,
@@ -99,7 +95,7 @@
                     "showOtherActive": true,
                     "showDetailsButton": true
                 },
-                "allTreatmentDetails": {
+                "expandedViewConfig": {
                     "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                     "showFlowSheet": true,
                     "showListView": true,
@@ -114,13 +110,13 @@
                 "translationKey": "DASHBOARD_TITLE_ANC_KEY",
                 "isObservation": true,
                 "displayOrder": 5,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "ANC"
                     ],
                     "numberOfVisits": 5
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "ANC"
                     ],
@@ -130,32 +126,28 @@
                 }
             },
             "diagnosis": {
-                "title": "Diagnosis",
                 "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "name": "diagnosis",
+"type": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
                 "displayOrder": 6
             },
             "programs": {
-                "title": "Programs",
                 "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "name": "programs",
+"type": "programs",
                 "displayOrder": 7
             },
             "radiology": {
-                "title": "Radiology",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
-                "name": "radiology",
+"type": "radiology",
                 "displayOrder": 8
             },
             "radiologyOrders": {
                 "orderType": "Radiology Order",
-                "title": "Radiology Orders",
-                "name": "ordersControl",
+"type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder": 9,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Radiology order fulfillment form"
                     ],
@@ -164,11 +156,10 @@
             },
             "DentalOrders": {
                 "orderType": "Dental Order",
-                "title": "Dental Orders",
-                "name": "ordersControl",
+"type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_DENTAL_ORDERS_KEY",
                 "displayOrder": 10,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Dental order fulfillment form"
                     ],
@@ -177,11 +168,10 @@
             },
             "USGOrders": {
                 "orderType": "USG Order",
-                "title": "USG Orders",
-                "name": "ordersControl",
+"type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_USG_ORDERS_KEY",
                 "displayOrder": 11,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "USG order fulfillment form"
                     ],
@@ -190,11 +180,10 @@
             },
             "ProcedureOrders": {
                 "orderType": "Procedure Order",
-                "title": "Procedure Orders",
-                "name": "ordersControl",
+"type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
                 "displayOrder": 12,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Procedure Order Fulfillment Form"
                     ],
@@ -202,12 +191,11 @@
                 }
             },
             "nutritionalValues": {
-                "title": "Nutritional Values",
                 "translationKey": "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
-                "name": "vitals",
+"type": "vitals",
                 "isObservation": true,
                 "displayOrder": 13,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "HEIGHT",
                         "Weight",
@@ -217,7 +205,7 @@
                     "numberOfVisits": 2,
                     "scope": "latest"
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "HEIGHT",
                         "Weight",
@@ -231,27 +219,24 @@
                 }
             },
             "disposition": {
-                "title": "Disposition",
                 "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
-                "name": "disposition",
+"type": "disposition",
                 "numberOfVisits": 1,
                 "displayOrder": 14
             },
             "visits": {
-                "title": "Visits",
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
-                "name": "visits",
+"type": "visits",
                 "displayOrder": 15,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 8,
                     "groupByVisits": true
                 }
             },
             "admissionDetails": {
-                "title": "Admission Details",
                 "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-                "name": "admissionDetails",
+"type": "admissionDetails",
                 "displayOrder": 16
             }
         }
@@ -261,9 +246,8 @@
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {
-                "title": "Patient Information",
                 "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                "name": "patientInformation",
+"type": "patientInformation",
                 "patientAttributes": [
                     "caste",
                     "class",
@@ -287,6 +271,7 @@
             "growthChart": {
                 "type": "observationGraph",
                 "name": "observationGraph",
+
                 "title": "Growth Chart",
                 "config": {
                     "yAxisConcepts": [
