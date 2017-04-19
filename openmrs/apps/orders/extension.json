@@ -17,7 +17,7 @@
 	 },
 
 	"bahmniClinicalPatientsSearchDentalOrdersAllPatients":{
-	 "id": "bahmni.clinical.patients.search.RadiologyOrderAllPatients",
+	 "id": "bahmni.clinical.patients.search.DentalOrderAllPatients",
 	 "extensionPointId": "org.bahmni.patient.search",
 	 "type": "config",
 	 "extensionParams": {
@@ -34,7 +34,7 @@
 	 },
        
         "bahmniClinicalPatientsSearchUSGOrdersAllPatients":{
-	 "id": "bahmni.clinical.patients.search.RadiologyOrderAllPatients",
+	 "id": "bahmni.clinical.patients.search.USGOrderAllPatients",
 	 "extensionPointId": "org.bahmni.patient.search",
 	 "type": "config",
 	 "extensionParams": {
@@ -51,7 +51,7 @@
 	 },
 	 
 	  "bahmniClinicalPatientsSearchProcedureOrdersAllPatients":{
-	 "id": "bahmni.clinical.patients.search.RadiologyOrderAllPatients",
+	 "id": "bahmni.clinical.patients.search.ProcedureOrderAllPatients",
 	 "extensionPointId": "org.bahmni.patient.search",
 	 "type": "config",
 	 "extensionParams": {
